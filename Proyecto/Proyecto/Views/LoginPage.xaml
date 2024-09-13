@@ -1,26 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proyecto.Views.LoginPage">
+             x:Class="Proyecto.Views.LoginPage" BackgroundColor="White"  NavigationPage.HasNavigationBar="False">
 
-    <StackLayout Padding="30">
-        <Label Text="Email Address" />
-        <Entry x:Name="txtemail" 
-               Placeholder="Email" 
-               Text="{Binding txtemail}" />
+    <StackLayout Padding="30" VerticalOptions="Center">
+        <Label Text="Sign In To Your Account" TextColor="Black" FontAttributes="Bold" FontSize="35" HorizontalOptions="Center"/>
+        <Label Text="Unleash your inner sloth 4.0 right now" Margin="0,0,0,40" FontSize="18" HorizontalOptions="Center" TextColor="Gray"/>
+        <Label Text="Email Address" FontSize="18" TextColor="Black"/>
 
-        <Label Text="Password" />
-        <Entry x:Name="txtclave" 
-               Placeholder="Password" 
-               Text="{Binding txtclave}" 
-               IsPassword="True" />
 
-        <Button Text="Sign In" 
-                Command="{Binding LoginCommand}" />
+        <Frame CornerRadius="20" BorderColor="#5046e5" Padding="10" Margin="0,0,0,10">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Image Grid.Column="0"
+               Source="correo.png" 
+               HeightRequest="20"  
+               WidthRequest="20" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Aspect="AspectFit"/>
+                <Entry Grid.Column="1" 
+               x:Name="txtemail" 
+               TextColor="Black"
+               Placeholder="Email"  
+               PlaceholderColor="Black"
+               Text="{Binding txtemail}"  
+               VerticalOptions="Center"
+               
+               Keyboard="Email"/>
+            </Grid>
+        </Frame>
 
-        <Button Text="Forgot Password?" 
-                Clicked="OnForgotPasswordClicked" />
-        <Button Text="Registrate" 
-         Clicked="OnRegisterClicked" />
+
+        <Label Text="Password" TextColor="Black" FontSize="18"/>
+
+
+        <Frame CornerRadius="20" BorderColor="#5046e5"  Padding="10">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                <Image Grid.Column="0"
+               Source="candado.png" 
+               HeightRequest="20" 
+               WidthRequest="20" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Aspect="AspectFit"/>
+                <Entry Grid.Column="1" 
+               x:Name="txtclave" 
+               TextColor="Black"
+               Placeholder="Password"  
+               PlaceholderColor="Black"
+               Text="{Binding txtclave}"  
+               VerticalOptions="Center"
+               IsPassword="True"/>
+            </Grid>
+        </Frame>
+        <Frame BackgroundColor="#5046e5" CornerRadius="20" HasShadow="True" Padding="145,15,145,15" Margin="10" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Sign In" TextColor="White" VerticalOptions="Center" FontSize="18" HorizontalOptions="Center" Grid.Column="0"/>
+                <Image Source="entrar.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+            </Grid>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+            Command="{Binding LoginCommand}"
+            CommandParameter="{Binding .}"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+
+
+
+
+
+
+
+        <Label
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+
+                    <Span Text="Don't have an account? " FontSize="18"
+                  TextColor="Black" />
+                  
+                    <Span Text="Sign Up" FontSize="18"
+                  TextColor="Blue">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRegisterClicked" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label
+HorizontalOptions="Center"
+VerticalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+
+
+                    <Span Text="Forgot Password" FontSize="18"
+              TextColor="Blue">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnForgotPasswordClicked" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+
+
+
     </StackLayout>
 </ContentPage>

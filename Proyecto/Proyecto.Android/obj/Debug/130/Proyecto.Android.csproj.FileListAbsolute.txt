@@ -2636,8 +2636,6 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\13
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\mipmap-xxxhdpi\icon.png
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\mipmap-xxxhdpi\launcher_foreground.png
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\candado.png
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\correo.png
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\uploadflags.txt
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\resolvedassemblies.hash
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\Firebase.Auth.dll
@@ -3223,3 +3221,6 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\13
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\candado.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\correo.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\entrar.png
