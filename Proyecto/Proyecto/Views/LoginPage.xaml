@@ -20,5 +20,7 @@
 
         <Button Text="Forgot Password?" 
                 Clicked="OnForgotPasswordClicked" />
+        <Button Text="Registrate" 
+         Clicked="OnRegisterClicked" />
     </StackLayout>
 </ContentPage>

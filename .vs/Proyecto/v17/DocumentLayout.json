@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\viewmodels\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\resetpasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\resetpasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\resetpasswordpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\resetpasswordpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\loginpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
       "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\loginpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\resetpasswordpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\resetpasswordpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,60 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
-              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
-              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBkAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T02:41:13.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
-              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
-              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-13T02:40:56.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResetPasswordViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\ResetPasswordViewModel.cs",
-              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\ResetPasswordViewModel.cs",
-              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\ResetPasswordViewModel.cs",
-              "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\ResetPasswordViewModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAcwCYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T02:40:46.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ResetPasswordPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml.cs",
-              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml.cs",
-              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml.cs",
-              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBQAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T02:40:10.845Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -92,9 +36,47 @@
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml",
               "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml",
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\ResetPasswordPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAwwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-13T02:39:56.206Z",
+              "WhenOpened": "2024-09-13T04:49:43.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T04:45:13.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwBYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T04:44:59.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-13T03:04:59.476Z",
               "EditorCaption": ""
             }
           ]
