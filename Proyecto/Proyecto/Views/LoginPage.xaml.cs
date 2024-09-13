@@ -27,6 +27,20 @@ namespace Proyecto.Views
         {
             await Navigation.PushAsync(new ResetPasswordPage());
         }
+        private void OnTogglePasswordVisibility(object sender, EventArgs e)
+        {
+            if (txtclave.IsPassword)
+            {
+                imgOjo.Source = "ojo.png"; // Cambia el ícono a "ojo.png"
+                txtclave.IsPassword = false; // Muestra la contraseña
+            }
+            else
+            {
+                imgOjo.Source = "cerrarojo.png"; // Cambia el ícono a "cerrar-ojo.png"
+                txtclave.IsPassword = true; // Oculta la contraseña
+            }
+        }
+
 
     }
 }

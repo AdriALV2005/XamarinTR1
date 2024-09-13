@@ -3224,3 +3224,5 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\13
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\candado.png
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\correo.png
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\entrar.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\cerrarojo.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\ojo.png

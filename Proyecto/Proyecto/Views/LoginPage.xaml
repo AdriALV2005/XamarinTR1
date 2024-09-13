@@ -34,8 +34,12 @@
         <Label Text="Password" TextColor="Black" FontSize="18"/>
 
 
-        <Frame CornerRadius="25" BorderColor="#5046e5"  Padding="10">
-            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+
+
+
+        <Frame CornerRadius="25" BorderColor="#5046e5" Padding="10">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                <!-- Ícono de candado -->
                 <Image Grid.Column="0"
                Source="candado.png" 
                HeightRequest="20" 
@@ -43,16 +47,37 @@
                VerticalOptions="Center"
                HorizontalOptions="Center"
                Aspect="AspectFit"/>
+
+                <!-- Campo de entrada de contraseña -->
                 <Entry Grid.Column="1" 
-               x:Name="txtclave" 
-               TextColor="Black"
-               Placeholder="Password"  
-               PlaceholderColor="Black"
-               Text="{Binding txtclave}"  
+        x:Name="txtclave" 
+        TextColor="Black"
+        Placeholder="Password"  
+        PlaceholderColor="Black"
+        Text="{Binding txtclave}"  
+        VerticalOptions="Center"
+        IsPassword="True"/>
+
+                <!-- Ícono para mostrar/ocultar contraseña -->
+                <Image Grid.Column="2"
+               x:Name="imgOjo"
+               Source="cerrarojo.png"
+               HeightRequest="20"
+               WidthRequest="20"
                VerticalOptions="Center"
-               IsPassword="True"/>
+               HorizontalOptions="Center"
+               Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTogglePasswordVisibility"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
         </Frame>
+
+
+
+
+
         <Frame BackgroundColor="#5046E5" CornerRadius="20" Padding="10" Margin="0,10,0,10" HasShadow="True">
             <Grid HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
