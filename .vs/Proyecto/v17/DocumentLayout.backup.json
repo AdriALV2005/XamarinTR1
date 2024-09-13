@@ -1,10 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Proyecto\\",
+  "WorkspaceRootPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\proyecto\\proyecto\\proyecto\\mainpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\conexion\\dbconn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\conexion\\dbconn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\app.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\app.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\views\\loginpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\loginpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\mainpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
       "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\mainpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\views\\registerpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\registerpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\proyecto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\proyecto.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\respaldo de xamarin\\proyecto\\proyecto\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +70,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Proyecto\\Proyecto\\Proyecto\\MainPage.xaml",
-              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Proyecto\\Proyecto\\Proyecto\\MainPage.xaml",
-              "RelativeToolTip": "Proyecto\\Proyecto\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABJAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\App.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\App.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\App.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-10T23:01:20.689Z",
+              "WhenOpened": "2024-09-13T01:11:04.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\MainPage.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T00:57:24.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBConn.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Conexion\\DBConn.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Conexion\\DBConn.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Conexion\\DBConn.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Conexion\\DBConn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T00:59:21.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Models\\UserModel.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T00:59:58.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:01:07.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:01:27.474Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:03:17.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwHsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-13T01:03:56.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:04:35.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\App.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T00:58:07.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T01:04:03.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\MainPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-10T23:01:20.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-13T01:04:28.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Proyecto.csproj",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Proyecto.csproj",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Proyecto.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-13T00:58:55.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\AssemblyInfo.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T00:58:05.966Z"
             }
           ]
         }

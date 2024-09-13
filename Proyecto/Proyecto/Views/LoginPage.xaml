@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.LoginPage"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#4A55A2</Color>
+            <Color x:Key="TextColor">#333333</Color>
+            <Color x:Key="PlaceholderColor">#CCCCCC</Color>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="InterSemiBold"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="InterSemiBold"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="InterSemiBold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="30,60,30,30" Spacing="20">
+        <Label Text="Sign In To Your Account."
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="{StaticResource TextColor}"/>
+
+        <Label Text="Unleash your inner sloth 4.0 right now."
+               FontSize="16"
+               TextColor="{StaticResource PlaceholderColor}"
+               Margin="0,0,0,20"/>
+
+        <Label Text="Email Address"
+               FontSize="14"
+               TextColor="{StaticResource TextColor}"/>
+        <Frame BorderColor="{StaticResource PlaceholderColor}" Padding="15,2" CornerRadius="25" HasShadow="False">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Source="email_icon.png" 
+                       HeightRequest="20" 
+                       WidthRequest="20" 
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+                <Entry Grid.Column="1"
+                       x:Name="txtemail" 
+                       Placeholder="elementary221b@gmail.com" 
+                       Text="{Binding txtemail}"
+                       PlaceholderColor="{StaticResource PlaceholderColor}"
+                       TextColor="{StaticResource TextColor}"
+                       HeightRequest="50">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                            <Setter Property="PlaceholderColor" Value="{StaticResource PrimaryColor}" />
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+            </Grid>
+        </Frame>
+
+        <Label Text="Password"
+               FontSize="14"
+               TextColor="{StaticResource TextColor}"/>
+        <Frame BorderColor="{StaticResource PlaceholderColor}" Padding="15,2" CornerRadius="25" HasShadow="False">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Source="lock_icon.png" 
+                       HeightRequest="20" 
+                       WidthRequest="20" 
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+                <Entry Grid.Column="1"
+                       x:Name="txtclave" 
+                       Placeholder="Password" 
+                       Text="{Binding txtclave}" 
+                       IsPassword="True"
+                       PlaceholderColor="{StaticResource PlaceholderColor}"
+                       TextColor="{StaticResource TextColor}"
+                       HeightRequest="50">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                            <Setter Property="PlaceholderColor" Value="{StaticResource PrimaryColor}" />
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
+            </Grid>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal">
+            <CheckBox Color="{StaticResource PrimaryColor}"/>
+            <Label Text="Remember For 30 Days" 
+                   VerticalOptions="Center"
+                   TextColor="{StaticResource TextColor}"
+                   FontSize="14"/>
+        </StackLayout>
+
+        <Button Text="Sign In" 
+                Command="{Binding LoginCommand}"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                TextColor="White"
+                CornerRadius="25"
+                HeightRequest="50"
+                FontSize="16"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Don't have an account? "
+                   TextColor="{StaticResource TextColor}"
+                   FontSize="14"/>
+            <Label Text="Sign Up"
+                   TextColor="{StaticResource PrimaryColor}"
+                   FontAttributes="Bold"
+                   FontSize="14">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <Label Text="Forgot Password"
+               TextColor="{StaticResource PrimaryColor}"
+               HorizontalOptions="Center"
+               FontSize="14">
+          
+        </Label>
+    </StackLayout>
+</ContentPage>

@@ -3,7 +3,9 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Proyecto.Android.dll" comes first in this list. */
 		"Proyecto.Android.dll",
+		"Firebase.Auth.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Proyecto.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

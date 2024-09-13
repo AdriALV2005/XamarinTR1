@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,12 @@ namespace Proyecto
         public MainPage()
         {
             InitializeComponent();
+        }
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            App.IsUserLoggedIn = true;
+            Navigation.InsertPageBefore(new LoginPage(), this);
+            await Navigation.PopAsync();
         }
     }
 }
