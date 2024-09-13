@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "63nZ5w76xqM=",
+  "dgSpecHash": "tqRyPjeEGb8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
+  "projectFilePath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adrim\\.nuget\\packages\\firebaseauthentication.net\\3.7.2\\firebaseauthentication.net.3.7.2.nupkg.sha512",
     "C:\\Users\\adrim\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

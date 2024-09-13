@@ -6679,11 +6679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
+      "projectUniqueName": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
       "projectName": "Proyecto.Android",
-      "projectPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
+      "projectPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto.Android\\Proyecto.Android.csproj",
       "packagesPath": "C:\\Users\\adrim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto.Android\\obj\\",
+      "outputPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6704,8 +6704,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj": {
-              "projectPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Respaldo de Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj"
+            "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj": {
+              "projectPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj"
             }
           }
         }
