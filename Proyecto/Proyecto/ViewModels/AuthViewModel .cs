@@ -1,4 +1,6 @@
-﻿using Firebase.Auth;
+﻿using Firebase.Database;
+using Firebase.Database.Query;
+using Firebase.Auth;
 using Proyecto.Conexion;
 using Proyecto.Models;
 using System;
@@ -13,6 +15,8 @@ namespace Proyecto.ViewModels
         private string email;
         private string password;
         private string confirmPassword;
+        private string firstName;
+        private string lastName;
         #endregion
 
         #region Propiedades
@@ -32,6 +36,18 @@ namespace Proyecto.ViewModels
         {
             get => confirmPassword;
             set => SetValue(ref confirmPassword, value);
+        }
+
+        public string FirstName
+        {
+            get => firstName;
+            set => SetValue(ref firstName, value);
+        }
+
+        public string LastName
+        {
+            get => lastName;
+            set => SetValue(ref lastName, value);
         }
         #endregion
 
@@ -77,6 +93,8 @@ namespace Proyecto.ViewModels
             {
                 EmailField = Email,
                 PasswordField = Password,
+                FirstName = FirstName,
+                LastName = LastName
             };
 
             try
@@ -84,6 +102,12 @@ namespace Proyecto.ViewModels
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(DBConn.WepApyAuthentication));
                 var authUser = await authProvider.CreateUserWithEmailAndPasswordAsync(newUser.EmailField, newUser.PasswordField);
                 string obtenerToken = authUser.FirebaseToken;
+
+                // Guardar datos adicionales en Firebase Realtime Database
+                var firebaseClient = new FirebaseClient(DBConn.FirebaseDatabaseUrl);
+                await firebaseClient
+                    .Child("users")
+                    .PostAsync(newUser);
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Usuario registrado correctamente.", "Aceptar");
 

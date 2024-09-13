@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Proyecto.Android.dll" comes first in this list. */
 		"Proyecto.Android.dll",
 		"Firebase.Auth.dll",
+		"Firebase.dll",
 		"FormsViewGroup.dll",
 		"Google.Api.CommonProtos.dll",
 		"Google.Api.Gax.dll",
@@ -20,6 +21,7 @@ public class MonoPackageManager_Resources {
 		"Grpc.Core.Api.dll",
 		"Grpc.Net.Client.dll",
 		"Grpc.Net.Common.dll",
+		"LiteDB.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Microsoft.Extensions.DependencyInjection.Abstractions.dll",
 		"Microsoft.Extensions.Logging.Abstractions.dll",
@@ -30,6 +32,7 @@ public class MonoPackageManager_Resources {
 		"System.Diagnostics.DiagnosticSource.dll",
 		"System.Linq.Async.dll",
 		"System.Management.dll",
+		"System.Reactive.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
 		"Xamarin.AndroidX.Annotation.Experimental.dll",

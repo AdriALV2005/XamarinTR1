@@ -3268,3 +3268,7 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\13
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\System.Memory.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\System.Threading.Tasks.Extensions.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\Firebase.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\LiteDB.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\System.Reactive.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll

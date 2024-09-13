@@ -3,18 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="White"
              x:Class="Proyecto.Views.RegisterPage">
+
     <StackLayout Padding="30"
                  VerticalOptions="Center">
+
         <Label Text="Create A New Account"
                TextColor="Black"
                FontAttributes="Bold"
                FontSize="35"
                HorizontalOptions="Center" />
+
         <Label Text="Unleash your inner sloth 4.0 right now"
                Margin="0,0,0,40"
                FontSize="18"
                HorizontalOptions="Center"
                TextColor="Gray" />
+
         <Label Text="Email Address"
                FontSize="18"
                TextColor="Black" />
@@ -42,6 +46,7 @@
                        Keyboard="Email" />
             </Grid>
         </Frame>
+
         <Label Text="Password"
                TextColor="Black"
                FontSize="18" />
@@ -67,6 +72,7 @@
                        IsPassword="True" />
             </Grid>
         </Frame>
+
         <Label Text="Confirm Password"
                Margin="0,10,0,0"
                TextColor="Black"
@@ -93,30 +99,61 @@
                        IsPassword="True" />
             </Grid>
         </Frame>
+
+        <Label Text="First Name"
+               FontSize="18"
+               TextColor="Black" />
+        <Frame CornerRadius="25"
+               BorderColor="#5046e5"
+               Padding="10"
+               Margin="0,0,0,10">
+            <Entry x:Name="txtFirstName"
+                   TextColor="Black"
+                   Placeholder="First Name"
+                   PlaceholderColor="Black"
+                   Text="{Binding FirstName}"
+                   VerticalOptions="Center" />
+        </Frame>
+
+        <Label Text="Last Name"
+               FontSize="18"
+               TextColor="Black" />
+        <Frame CornerRadius="25"
+               BorderColor="#5046e5"
+               Padding="10"
+               Margin="0,0,0,10">
+            <Entry x:Name="txtLastName"
+                   TextColor="Black"
+                   Placeholder="Last Name"
+                   PlaceholderColor="Black"
+                   Text="{Binding LastName}"
+                   VerticalOptions="Center" />
+        </Frame>
+
         <Frame BackgroundColor="#5046E5"
-        CornerRadius="20"
-        Padding="10,12"
-        Margin="0,20,0,10"
-        HasShadow="True">
+               CornerRadius="20"
+               Padding="10,12"
+               Margin="0,20,0,10"
+               HasShadow="True">
             <Grid HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Label Text="Register"
-                TextColor="White"
-                FontSize="18"
-                FontAttributes="Bold"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Grid.Column="0" />
+                       TextColor="White"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Grid.Column="0" />
                 <Image Source="entrar.png"
-                HeightRequest="20"
-                WidthRequest="20"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"
-                Grid.Column="1"
-                Margin="5,0,0,0" />
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Grid.Column="1"
+                       Margin="5,0,0,0" />
             </Grid>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding RegisterCommand}" />

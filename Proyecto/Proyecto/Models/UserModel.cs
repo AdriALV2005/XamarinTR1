@@ -8,5 +8,7 @@ namespace Proyecto.Models
     {
         public string EmailField { get; set; }
         public string PasswordField { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
