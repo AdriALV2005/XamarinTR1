@@ -51,6 +51,10 @@
               "target": "Package",
               "version": "[3.7.2, )"
             },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"
@@ -112,6 +116,10 @@
             "FirebaseAuthentication.net": {
               "target": "Package",
               "version": "[3.7.2, )"
+            },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.8.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

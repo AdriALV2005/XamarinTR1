@@ -1,126 +1,129 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proyecto.Views.LoginPage" BackgroundColor="White"  NavigationPage.HasNavigationBar="False">
-
-    <StackLayout Padding="30" VerticalOptions="Center">
-        <Label Text="Sign In To Your Account" TextColor="Black" FontAttributes="Bold" FontSize="35" HorizontalOptions="Center"/>
-        <Label Text="Unleash your inner sloth 4.0 right now" Margin="0,0,0,40" FontSize="18" HorizontalOptions="Center" TextColor="Gray"/>
-        <Label Text="Email Address" FontSize="18" TextColor="Black"/>
-
-
-        <Frame CornerRadius="25" BorderColor="#5046e5" Padding="10" Margin="0,0,0,10">
-            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                <Image Grid.Column="0"
-               Source="correo.png" 
-               HeightRequest="20"  
-               WidthRequest="20" 
-               VerticalOptions="Center"
-               HorizontalOptions="Center"
-               Aspect="AspectFit"/>
-                <Entry Grid.Column="1" 
-               x:Name="txtemail" 
+             x:Class="Proyecto.Views.LoginPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Padding="30"
+                 VerticalOptions="Center">
+        <Label Text="Sign In To Your Account"
                TextColor="Black"
-               Placeholder="Email"  
-               PlaceholderColor="Black"
-               Text="{Binding txtemail}"  
-               VerticalOptions="Center"
-               
-               Keyboard="Email"/>
+               FontAttributes="Bold"
+               FontSize="35"
+               HorizontalOptions="Center" />
+        <Label Text="Unleash your inner sloth 4.0 right now"
+               Margin="0,0,0,40"
+               FontSize="18"
+               HorizontalOptions="Center"
+               TextColor="Gray" />
+        <Label Text="Email Address"
+               FontSize="18"
+               TextColor="Black" />
+        <Frame CornerRadius="25"
+               BorderColor="#5046e5"
+               Padding="10"
+               Margin="0,0,0,10">
+            <Grid ColumnDefinitions="Auto,*"
+                  ColumnSpacing="10">
+                <Image Grid.Column="0"
+                       Source="correo.png"
+                       HeightRequest="20"
+                       Margin="5,0,0,0"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFit" />
+                <Entry Grid.Column="1"
+                       x:Name="txtemail"
+                       TextColor="Black"
+                       Placeholder="Email"
+                       PlaceholderColor="Black"
+                       Text="{Binding txtemail}"
+                       VerticalOptions="Center"
+                       Keyboard="Email" />
             </Grid>
         </Frame>
-
-
-        <Label Text="Password" TextColor="Black" FontSize="18"/>
-
-
-
-
-
-        <Frame CornerRadius="25" BorderColor="#5046e5" Padding="10">
-            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+        <Label Text="Password"
+               TextColor="Black"
+               FontSize="18" />
+        <Frame CornerRadius="25"
+               BorderColor="#5046e5"
+               Padding="10">
+            <Grid ColumnDefinitions="Auto,*,Auto"
+                  ColumnSpacing="10">
                 <!-- Ícono de candado -->
                 <Image Grid.Column="0"
-               Source="candado.png" 
-               HeightRequest="20" 
-               WidthRequest="20" 
-               VerticalOptions="Center"
-               HorizontalOptions="Center"
-               Aspect="AspectFit"/>
-
+                       Source="candado.png"
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Margin="5,0,0,0"
+                       Aspect="AspectFit" />
                 <!-- Campo de entrada de contraseña -->
-                <Entry Grid.Column="1" 
-        x:Name="txtclave" 
-        TextColor="Black"
-        Placeholder="Password"  
-        PlaceholderColor="Black"
-        Text="{Binding txtclave}"  
-        VerticalOptions="Center"
-        IsPassword="True"/>
-
+                <Entry Grid.Column="1"
+                       x:Name="txtclave"
+                       TextColor="Black"
+                       Placeholder="Password"
+                       PlaceholderColor="Black"
+                       Text="{Binding txtclave}"
+                       VerticalOptions="Center"
+                       IsPassword="True" />
                 <!-- Ícono para mostrar/ocultar contraseña -->
                 <Image Grid.Column="2"
-               x:Name="imgOjo"
-               Source="cerrarojo.png"
-               HeightRequest="20"
-               WidthRequest="20"
-               VerticalOptions="Center"
-               HorizontalOptions="Center"
-               Aspect="AspectFit">
+                       x:Name="imgOjo"
+                       Source="cerrarojo.png"
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       Margin="0,0,10,0"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFit">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTogglePasswordVisibility"/>
+                        <TapGestureRecognizer Tapped="OnTogglePasswordVisibility" />
                     </Image.GestureRecognizers>
                 </Image>
             </Grid>
         </Frame>
-
-
-
-
-
-        <Frame BackgroundColor="#5046E5" CornerRadius="20" Padding="10" Margin="0,10,0,10" HasShadow="True">
+        <Frame BackgroundColor="#5046E5"
+               CornerRadius="20"
+               Padding="10,12"
+               Margin="0,20,0,10"
+               HasShadow="True">
             <Grid HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Sign In" 
-               TextColor="White" 
-               FontSize="18" 
-               FontAttributes="Bold"
-               VerticalOptions="Center" 
-               HorizontalOptions="Center" 
-               Grid.Column="0" />
-                <Image Source="entrar.png" 
-               HeightRequest="20" 
-               WidthRequest="20" 
-               VerticalOptions="Center" 
-               HorizontalOptions="Start" 
-               Grid.Column="1" 
-               Margin="5,0,0,0" />
+                <Label Text="Sign In"
+                       TextColor="White"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Grid.Column="0" />
+                <Image Source="entrar.png"
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Grid.Column="1"
+                       Margin="5,0,0,0" />
             </Grid>
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer   Command="{Binding LoginCommand}" />
+                <TapGestureRecognizer Command="{Binding LoginCommand}" />
             </Frame.GestureRecognizers>
         </Frame>
-
-
-
-
-
-
-
-        <Label
-    HorizontalOptions="Center"
-    VerticalOptions="Center">
+        <Label HorizontalOptions="Center"
+               VerticalOptions="Center">
             <Label.FormattedText>
                 <FormattedString>
-
-                    <Span Text="Don't have an account? " FontSize="18"
-                  TextColor="Black" />
-                  
-                    <Span Text="Sign Up" FontSize="18"
-                  TextColor="Blue">
+                    <Span Text="Don't have an account? "
+                          FontSize="18"
+                          TextColor="Black" />
+                    <Span Text="Sign Up"
+                          FontSize="18"
+                          TextColor="Blue">
                         <Span.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnRegisterClicked" />
                         </Span.GestureRecognizers>
@@ -128,16 +131,13 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-
-        <Label
-HorizontalOptions="Center"
-VerticalOptions="Center">
+        <Label HorizontalOptions="Center"
+               VerticalOptions="Center">
             <Label.FormattedText>
                 <FormattedString>
-
-
-                    <Span Text="Forgot Password" FontSize="18"
-              TextColor="Blue">
+                    <Span Text="Forgot Password"
+                          FontSize="18"
+                          TextColor="Blue">
                         <Span.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnForgotPasswordClicked" />
                         </Span.GestureRecognizers>
@@ -145,9 +145,5 @@ VerticalOptions="Center">
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-
-
-
-
     </StackLayout>
 </ContentPage>

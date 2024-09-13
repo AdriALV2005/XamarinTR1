@@ -18,7 +18,7 @@ namespace Proyecto.Views
             InitializeComponent();
 
             // Asigna un ViewModel a la página.
-            BindingContext = new ResetPasswordViewModel(Navigation);
+            BindingContext = new AuthViewModel(Navigation);
         }
     }
 }
