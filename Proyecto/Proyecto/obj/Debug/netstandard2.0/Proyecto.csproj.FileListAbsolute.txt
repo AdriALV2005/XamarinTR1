@@ -83,3 +83,8 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandar
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\refint\Proyecto.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.pdb
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\OnboardingPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\WalkthroughItemPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.Fody.CopyLocal.cache
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.Fody.RuntimeCopyLocal.cache

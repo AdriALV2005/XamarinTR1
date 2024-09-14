@@ -1,9 +1,11 @@
-﻿using Firebase.Database;
+﻿using Firebase.Auth;
+using Firebase.Database;
 using Firebase.Database.Query;
-using Firebase.Auth;
 using Proyecto.Conexion;
 using Proyecto.Models;
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,6 +19,7 @@ namespace Proyecto.ViewModels
         private string confirmPassword;
         private string firstName;
         private string lastName;
+        private string phoneNumber;
         #endregion
 
         #region Propiedades
@@ -48,6 +51,12 @@ namespace Proyecto.ViewModels
         {
             get => lastName;
             set => SetValue(ref lastName, value);
+        }
+
+        public string PhoneNumber
+        {
+            get => phoneNumber;
+            set => SetValue(ref phoneNumber, value);
         }
         #endregion
 
@@ -89,12 +98,19 @@ namespace Proyecto.ViewModels
                 return;
             }
 
+            if (!IsValidPhoneNumber(PhoneNumber))
+            {
+                await Application.Current.MainPage.DisplayAlert("Advertencia", "El número de celular debe tener 9 dígitos.", "Aceptar");
+                return;
+            }
+
             var newUser = new UserModel()
             {
                 EmailField = Email,
                 PasswordField = Password,
                 FirstName = FirstName,
-                LastName = LastName
+                LastName = LastName,
+                PhoneNumber = PhoneNumber
             };
 
             try
@@ -103,21 +119,35 @@ namespace Proyecto.ViewModels
                 var authUser = await authProvider.CreateUserWithEmailAndPasswordAsync(newUser.EmailField, newUser.PasswordField);
                 string obtenerToken = authUser.FirebaseToken;
 
-                // Guardar datos adicionales en Firebase Realtime Database
-                var firebaseClient = new FirebaseClient(DBConn.FirebaseDatabaseUrl);
-                await firebaseClient
-                    .Child("users")
-                    .PostAsync(newUser);
+               
+                var userDictionary = new Dictionary<string, string>
+                {
+                    { "EmailField", newUser.EmailField },
+                    { "PasswordField", newUser.PasswordField },
+                    { "FirstName", newUser.FirstName },
+                    { "LastName", newUser.LastName },
+                    { "PhoneNumber", newUser.PhoneNumber }
+                };
+
+               
+                var firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
+                await firebaseClient.Child("users").PostAsync(userDictionary);
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Usuario registrado correctamente.", "Aceptar");
 
-                // Navegar a la página principal o de inicio de sesión
+             
                 await Navigation.PopAsync();
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Advertencia", $"Error al registrar: {ex.Message}", "Aceptar");
             }
+        }
+
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            
+            return phoneNumber.Length == 9 && long.TryParse(phoneNumber, out _);
         }
         #endregion
     }

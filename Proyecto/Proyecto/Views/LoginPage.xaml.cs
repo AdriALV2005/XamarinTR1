@@ -31,13 +31,13 @@ namespace Proyecto.Views
         {
             if (txtclave.IsPassword)
             {
-                imgOjo.Source = "ojo.png"; // Cambia el ícono a "ojo.png"
-                txtclave.IsPassword = false; // Muestra la contraseña
+                imgOjo.Source = "ojo.png"; 
+                txtclave.IsPassword = false; 
             }
             else
             {
-                imgOjo.Source = "cerrarojo.png"; // Cambia el ícono a "cerrar-ojo.png"
-                txtclave.IsPassword = true; // Oculta la contraseña
+                imgOjo.Source = "cerrarojo.png"; 
+                txtclave.IsPassword = true; 
             }
         }
 
