@@ -1,6 +1,7 @@
 ﻿using Proyecto.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace Proyecto.Views
         {
             InitializeComponent();
             BindingContext = new LoginViewModel(Navigation);
+            Debug.WriteLine("LoginPage: Página cargada");
+
         }
 
         private async void OnRegisterClicked(object sender, EventArgs e)

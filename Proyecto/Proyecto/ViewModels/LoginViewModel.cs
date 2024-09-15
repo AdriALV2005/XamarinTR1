@@ -2,44 +2,42 @@
 using Firebase.Database;
 using Proyecto.Conexion;
 using Proyecto.Models;
+using Proyecto.Services;
 using Proyecto.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using System.Linq;
-using Google.Type;
-using Xamarin.Essentials;
 
 namespace Proyecto.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        #region Atributos
         private string email;
         private string clave;
-        #endregion
+        private readonly IUserService _userService;
 
-        #region Propiedades
         public string txtemail
         {
             get { return email; }
             set { SetValue(ref email, value); }
         }
+
         public string txtclave
         {
             get { return clave; }
             set { SetValue(ref clave, value); }
         }
 
-        #endregion
-
-        #region Command
         public Command LoginCommand { get; }
-        #endregion
 
-        #region Metodo
+        public LoginViewModel(INavigation navigation)
+        {
+            Navigation = navigation;
+            _userService = DependencyService.Get<IUserService>();
+            LoginCommand = new Command(async () => await LoginUsuario());
+        }
+
         public async Task LoginUsuario()
         {
             var objusuario = new UserModel()
@@ -54,19 +52,18 @@ namespace Proyecto.ViewModels
                 var authuser = await autenticacion.SignInWithEmailAndPasswordAsync(objusuario.EmailField.ToString(), objusuario.PasswordField.ToString());
                 string obtenertoken = authuser.FirebaseToken;
 
-                // Retrieve user data from Firebase
                 var firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
                 var userQuery = await firebaseClient
                     .Child("users")
                     .OnceAsync<UserModel>();
 
                 var user = userQuery
-                    .Where(u => u.Object.EmailField == objusuario.EmailField)
-                    .FirstOrDefault();
+                    .FirstOrDefault(u => u.Object.EmailField == objusuario.EmailField);
 
                 if (user != null)
                 {
                     var userData = user.Object;
+                    await _userService.SetCurrentUserAsync(userData);
 
                     var profilePage = new ProfilePage();
                     profilePage.BindingContext = new AuthViewModel(Navigation)
@@ -79,7 +76,6 @@ namespace Proyecto.ViewModels
                     };
 
                     var Propiedades_NavigationPage = new NavigationPage(profilePage);
-                    //Propiedades_NavigationPage.BarBackgroundColor = Color.RoyalBlue;
                     App.Current.MainPage = Propiedades_NavigationPage;
                 }
                 else
@@ -93,15 +89,5 @@ namespace Proyecto.ViewModels
                 // You might want to log the exception: Console.WriteLine(ex);
             }
         }
-        #endregion
-
-        #region Constructor
-        public LoginViewModel(INavigation navegar)
-        {
-            Navigation = navegar;
-            LoginCommand = new Command(async () => await LoginUsuario());
-
-        }
-        #endregion
     }
 }

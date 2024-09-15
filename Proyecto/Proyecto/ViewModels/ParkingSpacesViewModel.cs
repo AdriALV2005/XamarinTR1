@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Proyecto.Conexion;
+using Proyecto.Models; // Asegúrate de agregar esta directiva using para la nueva ubicación de ParkingSpace
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -49,8 +50,10 @@ namespace Proyecto.ViewModels
                 {
                     ParkingSpaces.Add(new ParkingSpace
                     {
-                        id = space.Object.id,
-                        isOccupied = space.Object.isOccupied
+                        SpaceID = space.Object.SpaceID,
+                        SpaceNumber = space.Object.SpaceNumber,
+                        IsOccupied = space.Object.IsOccupied,
+                        Place = space.Object.Place
                     });
                 }
 
@@ -74,13 +77,5 @@ namespace Proyecto.ViewModels
                 IsBusy = false;
             }
         }
-
     }
-
-    public class ParkingSpace
-    {
-        public string id { get; set; }
-        public bool isOccupied { get; set; }
-    }
-
 }

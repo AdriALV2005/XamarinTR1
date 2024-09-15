@@ -1,7 +1,6 @@
-﻿using Proyecto.Views;
-using System;
+﻿using Proyecto.Services;
+using Proyecto.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Proyecto
 {
@@ -12,7 +11,9 @@ namespace Proyecto
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new OnboardingPage());
+            DependencyService.Register<IUserService, UserService>();
+
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

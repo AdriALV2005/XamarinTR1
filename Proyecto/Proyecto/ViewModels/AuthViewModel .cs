@@ -3,8 +3,12 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using Proyecto.Conexion;
 using Proyecto.Models;
+using Proyecto.Services;
+using Proyecto.Views;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -19,6 +23,7 @@ namespace Proyecto.ViewModels
         private string firstName;
         private string lastName;
         private string phoneNumber;
+        private readonly IUserService _userService;
         #endregion
 
         #region Propiedades
@@ -65,14 +70,18 @@ namespace Proyecto.ViewModels
         public Command ResetPasswordCommand { get; }
         public Command RegisterCommand { get; }
         public Command LoginCommand { get; }
+        public Command LogoutCommand { get; }
         #endregion
 
         #region Constructor
         public AuthViewModel(INavigation navigation)
         {
             Navigation = navigation;
+            _userService = DependencyService.Get<IUserService>();
             ResetPasswordCommand = new Command(async () => await ResetPasswordAsync());
             RegisterCommand = new Command(async () => await RegisterUser());
+            LogoutCommand = new Command(async () => await LogoutAsync());
+
         }
         #endregion
 
@@ -113,7 +122,6 @@ namespace Proyecto.ViewModels
                 FirstName = FirstName,
                 LastName = LastName,
                 PhoneNumber = PhoneNumber
-               
             };
 
             try
@@ -122,7 +130,6 @@ namespace Proyecto.ViewModels
                 var authUser = await authProvider.CreateUserWithEmailAndPasswordAsync(newUser.EmailField, newUser.PasswordField);
                 string obtenerToken = authUser.FirebaseToken;
 
-               
                 var userDictionary = new Dictionary<string, string>
                 {
                     { "EmailField", newUser.EmailField },
@@ -132,13 +139,11 @@ namespace Proyecto.ViewModels
                     { "PhoneNumber", newUser.PhoneNumber }
                 };
 
-               
                 var firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
                 await firebaseClient.Child("users").PostAsync(userDictionary);
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Usuario registrado correctamente.", "Aceptar");
 
-             
                 await Navigation.PopAsync();
             }
             catch (Exception ex)
@@ -149,8 +154,35 @@ namespace Proyecto.ViewModels
 
         private bool IsValidPhoneNumber(string phoneNumber)
         {
-            
             return phoneNumber.Length == 9 && long.TryParse(phoneNumber, out _);
+        }
+
+        private async Task LogoutAsync()
+        {
+            // Limpiar la información del usuario actual
+            await _userService.SetCurrentUserAsync(null);
+
+            // Agregar un mensaje de depuración
+            Debug.WriteLine("Cerrar Sesión: Comando ejecutado");
+
+            // Navegar a la página de inicio de sesión como una modal
+            await Navigation.PushModalAsync(new LoginPage());
+
+            // Agregar un mensaje de depuración después de la navegación
+            Debug.WriteLine("Cerrar Sesión: Navegación a LoginPage completada");
+
+            // Eliminar la página actual de la pila de navegación
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach (var page in existingPages)
+            {
+                if (page is ProfilePage)
+                {
+                    Navigation.RemovePage(page);
+                }
+            }
+
+            // Establecer la página de inicio de sesión como la página principal
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
         }
         #endregion
     }

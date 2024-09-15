@@ -6,6 +6,7 @@ namespace Proyecto.Models
 {
     public class UserModel
     {
+        public string UserID { get; set; }
         public string EmailField { get; set; }
         public string PasswordField { get; set; }
         public string FirstName { get; set; }

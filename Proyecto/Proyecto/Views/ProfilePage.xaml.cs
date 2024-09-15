@@ -1,27 +1,40 @@
-﻿using Proyecto.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Proyecto.Services;
+using Proyecto.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Proyecto.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProfilePage : ContentPage
-	{
+    public partial class ProfilePage : ContentPage
+    {
+        private readonly IUserService _userService;
+
         public ProfilePage()
         {
             InitializeComponent();
-            BindingContext = new AuthViewModel(Navigation);
+            _userService = DependencyService.Get<IUserService>();
+            LoadUserData();
         }
-        private async void OnChangePasswordTapped(object sender, EventArgs e)
+
+        private async void LoadUserData()
         {
-            // Navegar a la página de cambio de contraseña
-            await Navigation.PushAsync(new ResetPasswordPage());
+            var user = await _userService.GetCurrentUserAsync();
+            if (user != null)
+            {
+                BindingContext = new AuthViewModel(Navigation)
+                {
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    PhoneNumber = user.PhoneNumber,
+                    Email = user.EmailField,
+                    Password = user.PasswordField
+                };
+            }
+        }
+
+        private async void OnChangePasswordTapped(object sender, System.EventArgs e)
+        {
+            // Implementar la lógica para cambiar la contraseña
+            await DisplayAlert("Cambiar Contraseña", "Aquí iría la lógica para cambiar la contraseña.", "OK");
         }
     }
 }
