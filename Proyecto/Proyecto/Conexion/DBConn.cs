@@ -6,8 +6,8 @@ namespace Proyecto.Conexion
 {
     public class DBConn
     {
-        public const string WepApyAuthentication = "AIzaSyA2mq7xnb8Yvz5_mXyaDH5BCFgX_5vCSb0";
-        public const string FirebaseUrl = "https://proyecto-46393-default-rtdb.firebaseio.com/";
+        public const string WepApyAuthentication = "AIzaSyCE9BDQOP1kKXQVqtWEJMegXkf2PRx_aek";
+        public const string FirebaseUrl = "https://xamarin-d170c-default-rtdb.firebaseio.com/";
 
     }
 }
