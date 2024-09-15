@@ -2,37 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Proyecto.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public INavigation Navigation;
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set => SetValue(ref _isBusy, value);
+        }
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public INavigation Navigation { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        protected void SetValue<T>(ref T backingFieled, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(backingFieled, value))
-            {
-                return;
-            }
-            backingFieled = value;
-            OnPropertyChanged(propertyName);
-        }
 
-        protected virtual void OnPropertyChangeds([CallerMemberName] string propertyName = null)
+        protected bool SetValue<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
+            if (EqualityComparer<T>.Default.Equals(backingField, value))
             {
-                handler(this, new PropertyChangedEventArgs(propertyName));
+                return false;
             }
+            backingField = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }
