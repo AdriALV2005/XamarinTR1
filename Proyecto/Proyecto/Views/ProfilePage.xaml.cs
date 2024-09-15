@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace Proyecto.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProfilePage : ContentPage
 	{
-		public ProfilePage ()
-		{
-			InitializeComponent ();
-		}
-	}
+        public ProfilePage()
+        {
+            InitializeComponent();
+            BindingContext = new ProfileViewModel();
+        }
+    }
 }
