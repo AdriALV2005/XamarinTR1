@@ -1,264 +1,224 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Proyecto.Controls"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proyecto.Views.ProfilePage"
              BackgroundColor="#f7f9fc">
-
-    <ScrollView Padding="0" Margin="0">
-        <StackLayout Padding="20">
-
-            <!-- Foto de portada -->
-            <Image Source="portada.png"
-                   Aspect="AspectFill"
-                   HeightRequest="200"
-                   HorizontalOptions="FillAndExpand"
-                   Margin="0,0,0,10"/>
-
-            <!-- Imagen de perfil con efecto 3D -->
-            <AbsoluteLayout>
-                <Frame CornerRadius="80"
-                       Padding="0"
-                       BackgroundColor="White"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       WidthRequest="160"
-                       HeightRequest="160"
-                       Margin="0, -80, 0, 0"
-                       HasShadow="True">
-                    <Image Source="perfil.png"
-                           Aspect="AspectFill"
+    <!-- Usar Grid para superponer el CustomNavbar sobre el contenido -->
+    <Grid>
+        <!-- Definir dos filas en la cuadrícula -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Contenido principal -->
+            <RowDefinition Height="80" />
+            <!-- Navbar -->
+        </Grid.RowDefinitions>
+        <!-- Contenido principal -->
+        <ScrollView Grid.Row="0"
+                    Padding="0"
+                    Margin="0">
+            <StackLayout Padding="20">
+                <!-- Foto de portada -->
+                <Image Source="portada.png"
+                       Aspect="AspectFill"
+                       HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="0,0,0,10" />
+                <!-- Imagen de perfil con efecto 3D -->
+                <AbsoluteLayout>
+                    <Frame CornerRadius="80"
+                           Padding="0"
+                           BackgroundColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
                            WidthRequest="160"
-                           HeightRequest="160"/>
-                </Frame>
-                <Image Source="edit_icon.png"
-                       WidthRequest="40"
-                       HeightRequest="40"
-                       AbsoluteLayout.LayoutBounds="1,0.1,AutoSize,AutoSize"
-                       AbsoluteLayout.LayoutFlags="PositionProportional"
-                       Margin="0,0,10,0"
-                       HorizontalOptions="End"/>
-            </AbsoluteLayout>
-
-            <!-- Nombre y Apellido -->
-            <Label Text="{Binding FullName}" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#333" Margin="0,10,0,5" Padding="0,10,0,10"/>
-
-            <!-- Información adicional -->
-            <StackLayout Padding="10">
-                <!-- Teléfono -->
-                <Label Text="📞 +123 456 7890"
-                       FontSize="18"
-                       TextColor="#555"
-                       Margin="0,0,0,5"/>
-
-                <!-- Dirección -->
-                <Label Text="🏠 Calle Ejemplo 123, Ciudad, País"
-                       FontSize="18"
-                       TextColor="#555"
-                       Margin="0,0,0,5"/>
-
-                <!-- Fecha de Nacimiento -->
-                <Label Text="🎂 01/01/1990"
-                       FontSize="18"
-                       TextColor="#555"
-                       Margin="0,0,0,20"/>
-
-                <!-- Descripción breve -->
-                <Label Text="Descripción breve sobre el usuario. Aquí puedes añadir detalles sobre la experiencia, intereses o cualquier información relevante."
-                       FontSize="16"
-                       TextColor="#777"
-                       Margin="0,0,0,20"
-                       LineBreakMode="WordWrap"
-                       MaxLines="3"/>
-            </StackLayout>
-
-            <!-- Biografía -->
-            <Frame CornerRadius="15"
-                   Padding="15"
-                   BackgroundColor="White"
-                   Margin="0,0,0,20"
-                   HasShadow="True">
-                <StackLayout>
-                    <Label Text="Biografía"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#333"/>
-                    <Label Text="Aquí puedes escribir una biografía más extensa sobre el usuario. Este texto puede incluir información sobre sus logros, intereses, y cualquier otra información relevante."
+                           HeightRequest="160"
+                           Margin="0, -80, 0, 0"
+                           HasShadow="True">
+                        <Image Source="perfil.png"
+                               Aspect="AspectFill"
+                               WidthRequest="160"
+                               HeightRequest="160" />
+                    </Frame>
+                    <Image Source="edit_icon.png"
+                           WidthRequest="40"
+                           HeightRequest="40"
+                           AbsoluteLayout.LayoutBounds="1,0.1,AutoSize,AutoSize"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Margin="0,0,10,0"
+                           HorizontalOptions="End" />
+                </AbsoluteLayout>
+                <!-- Nombre y Apellido -->
+                <Label Text="{Binding FullName}"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#333"
+                       Margin="0,10,0,5"
+                       Padding="0,10,0,10" />
+                <!-- Información adicional -->
+                <StackLayout Padding="10">
+                    <!-- Teléfono -->
+                    <Label FontSize="18"
+                           TextColor="#555"
+                           Margin="0,0,0,5">
+                        <Label.Text>
+                            <Binding Path="PhoneNumber">
+                                <Binding.StringFormat>                                    
+                                    📞 {0}
+                                </Binding.StringFormat>
+                            </Binding>
+                        </Label.Text>
+                    </Label>
+                    <!-- Dirección -->
+                    <Label FontSize="18"
+                           TextColor="#555"
+                           Margin="0,0,0,5">
+                        <Label.Text>
+                            <Binding Path="Email">
+                                <Binding.StringFormat>                                    
+                                    📧 {0}
+                                </Binding.StringFormat>
+                            </Binding>
+                        </Label.Text>
+                    </Label>
+                    <!-- Fecha de Nacimiento -->
+                    <Label Text="🎂 01/01/1990"
+                           FontSize="18"
+                           TextColor="#555"
+                           Margin="0,0,0,20" />
+                    <!-- Descripción breve -->
+                    <Label Text="Descripción breve sobre el usuario. Aquí puedes añadir detalles sobre la experiencia, intereses o cualquier información relevante."
                            FontSize="16"
-                           TextColor="#666"
+                           TextColor="#777"
+                           Margin="0,0,0,20"
                            LineBreakMode="WordWrap"
-                           MaxLines="5"/>
+                           MaxLines="3" />
                 </StackLayout>
-            </Frame>
-
-            <!-- Historial -->
-            <Frame CornerRadius="15"
-                   Padding="15"
-                   BackgroundColor="White"
-                   Margin="0,0,0,20"
-                   HasShadow="True">
-                <StackLayout>
-                    <Label Text="Historial"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#333"/>
+                <!-- Biografía -->
+                <Frame CornerRadius="15"
+                       Padding="15"
+                       BackgroundColor="White"
+                       Margin="0,0,0,20"
+                       HasShadow="True">
                     <StackLayout>
-                        <Frame Padding="10"
-                               Margin="0,5,0,5"
-                               BackgroundColor="#e9ecef"
-                               HasShadow="True"
-                               CornerRadius="10">
-                            <StackLayout>
-                                <Label Text="Compra de tickets"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="#333"/>
-                                <Label Text="12/01/2024"
-                                       FontSize="14"
-                                       TextColor="#777"/>
-                            </StackLayout>
-                        </Frame>
-                        <Frame Padding="10"
-                               Margin="0,5,0,5"
-                               BackgroundColor="#e9ecef"
-                               HasShadow="True"
-                               CornerRadius="10">
-                            <StackLayout>
-                                <Label Text="Reserva de espacio"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="#333"/>
-                                <Label Text="05/01/2024"
-                                       FontSize="14"
-                                       TextColor="#777"/>
-                            </StackLayout>
-                        </Frame>
-                        <Frame Padding="10"
-                               Margin="0,5,0,5"
-                               BackgroundColor="#e9ecef"
-                               HasShadow="True"
-                               CornerRadius="10">
-                            <StackLayout>
-                                <Label Text="Pago de mensualidad"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="#333"/>
-                                <Label Text="15/12/2023"
-                                       FontSize="14"
-                                       TextColor="#777"/>
-                            </StackLayout>
-                        </Frame>
-                        <Frame Padding="10"
-                               Margin="0,5,0,5"
-                               BackgroundColor="#e9ecef"
-                               HasShadow="True"
-                               CornerRadius="10">
-                            <StackLayout>
-                                <Label Text="Compra de accesorios"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="#333"/>
-                                <Label Text="22/11/2023"
-                                       FontSize="14"
-                                       TextColor="#777"/>
-                            </StackLayout>
-                        </Frame>
+                        <Label Text="Biografía"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#333" />
+                        <Label Text="Aquí puedes escribir una biografía más extensa sobre el usuario. Este texto puede incluir información sobre sus logros, intereses, y cualquier otra información relevante."
+                               FontSize="16"
+                               TextColor="#666"
+                               LineBreakMode="WordWrap"
+                               MaxLines="5" />
                     </StackLayout>
-                </StackLayout>
-            </Frame>
-
-            <!-- Estadísticas de Uso -->
-            <Frame CornerRadius="15"
-                   Padding="15"
-                   BackgroundColor="White"
-                   Margin="0,0,0,20"
-                   HasShadow="True">
-                <StackLayout>
-                    <Label Text="Estadísticas de Uso"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#333"/>
+                </Frame>
+                <!-- Historial -->
+                <Frame CornerRadius="15"
+                       Padding="15"
+                       BackgroundColor="White"
+                       Margin="0,0,0,20"
+                       HasShadow="True">
                     <StackLayout>
-                        <Label Text="Total de Reservas: 45"
-                               FontSize="16"
-                               TextColor="#555"
-                               Margin="0,5"/>
-                        <Label Text="Espacios Usados: 30"
-                               FontSize="16"
-                               TextColor="#555"
-                               Margin="0,5"/>
-                        <Label Text="Horas de Estacionamiento: 150"
-                               FontSize="16"
-                               TextColor="#555"
-                               Margin="0,5"/>
-                        <Label Text="Gastos Totales: $320"
-                               FontSize="16"
-                               TextColor="#555"
-                               Margin="0,5"/>
+                        <Label Text="Historial"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#333" />
+                        <StackLayout>
+                            <Frame Padding="10"
+                                   Margin="0,5,0,5"
+                                   BackgroundColor="#e9ecef"
+                                   HasShadow="True"
+                                   CornerRadius="10">
+                                <StackLayout>
+                                    <Label Text="Compra de tickets"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#333" />
+                                    <Label Text="12/01/2024"
+                                           FontSize="14"
+                                           TextColor="#777" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="10"
+                                   Margin="0,5,0,5"
+                                   BackgroundColor="#e9ecef"
+                                   HasShadow="True"
+                                   CornerRadius="10">
+                                <StackLayout>
+                                    <Label Text="Reserva de espacio"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#333" />
+                                    <Label Text="05/01/2024"
+                                           FontSize="14"
+                                           TextColor="#777" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="10"
+                                   Margin="0,5,0,5"
+                                   BackgroundColor="#e9ecef"
+                                   HasShadow="True"
+                                   CornerRadius="10">
+                                <StackLayout>
+                                    <Label Text="Pago de mensualidad"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#333" />
+                                    <Label Text="15/12/2023"
+                                           FontSize="14"
+                                           TextColor="#777" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="10"
+                                   Margin="0,5,0,5"
+                                   BackgroundColor="#e9ecef"
+                                   HasShadow="True"
+                                   CornerRadius="10">
+                                <StackLayout>
+                                    <Label Text="Compra de accesorios"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#333" />
+                                    <Label Text="22/11/2023"
+                                           FontSize="14"
+                                           TextColor="#777" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
                     </StackLayout>
-                </StackLayout>
-            </Frame>
-
-            <!-- Redes Sociales -->
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center"
-                         Spacing="15"
-                         Margin="0,0,0,20">
-                <Frame CornerRadius="25"
-                       Padding="0"
-                       BackgroundColor="#e9ecef"
-                       WidthRequest="50"
-                       HeightRequest="50"
-                       HasShadow="True">
-                    <Image Source="facebook_icon.png"
-                           Aspect="AspectFit"/>
                 </Frame>
-                <Frame CornerRadius="25"
-                       Padding="0"
-                       BackgroundColor="#e9ecef"
-                       WidthRequest="50"
-                       HeightRequest="50"
+                <!-- Estadísticas de Uso -->
+                <Frame CornerRadius="15"
+                       Padding="15"
+                       BackgroundColor="White"
+                       Margin="0,0,0,20"
                        HasShadow="True">
-                    <Image Source="twitter_icon.png"
-                           Aspect="AspectFit"/>
-                </Frame>
-                <Frame CornerRadius="25"
-                       Padding="0"
-                       BackgroundColor="#e9ecef"
-                       WidthRequest="50"
-                       HeightRequest="50"
-                       HasShadow="True">
-                    <Image Source="instagram_icon.png"
-                           Aspect="AspectFit"/>
+                    <StackLayout>
+                        <Label Text="Estadísticas de Uso"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#333" />
+                        <StackLayout>
+                            <Label Text="Total de Reservas: 45"
+                                   FontSize="16"
+                                   TextColor="#555"
+                                   Margin="0,5" />
+                            <Label Text="Espacios Usados: 30"
+                                   FontSize="16"
+                                   TextColor="#555"
+                                   Margin="0,5" />
+                        </StackLayout>
+                    </StackLayout>
                 </Frame>
             </StackLayout>
-
-            <!-- Botones -->
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center"
-                         Spacing="20"
-                         Margin="0,0,0,10">
-                <!-- Botón Editar Perfil -->
-                <Button Text="Editar Perfil"
-                        BackgroundColor="#007bff"
-                        TextColor="White"
-                        CornerRadius="25"
-                        HeightRequest="50"
-                        WidthRequest="160"
-                        FontSize="16"
-                        BorderColor="#0056b3"
-                        BorderWidth="1"/>
-
-                <!-- Botón Cerrar Sesión -->
-                <Button Text="Cerrar Sesión"
-                        BackgroundColor="#dc3545"
-                        TextColor="White"
-                        CornerRadius="25"
-                        HeightRequest="50"
-                        WidthRequest="160"
-                        FontSize="16"
-                        BorderColor="#c82333"
-                        BorderWidth="1"/>
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+        <!-- Navbar en la parte inferior -->
+        <controls:CustomNavbar Grid.Row="1"
+                               VerticalOptions="End"
+                               HorizontalOptions="FillAndExpand"
+                               Padding="0"
+                               Margin="0" />
+    </Grid>
 </ContentPage>

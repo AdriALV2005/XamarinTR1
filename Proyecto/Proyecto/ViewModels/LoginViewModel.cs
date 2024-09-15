@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Linq;
+using Google.Type;
+using Xamarin.Essentials;
 
 namespace Proyecto.ViewModels
 {
@@ -71,11 +73,13 @@ namespace Proyecto.ViewModels
                     {
                         FirstName = userData.FirstName,
                         LastName = userData.LastName,
+                        PhoneNumber = userData.PhoneNumber,
+                        Email = userData.EmailField
                         // Add other properties as needed
                     };
 
                     var Propiedades_NavigationPage = new NavigationPage(profilePage);
-                    Propiedades_NavigationPage.BarBackgroundColor = Color.RoyalBlue;
+                    //Propiedades_NavigationPage.BarBackgroundColor = Color.RoyalBlue;
                     App.Current.MainPage = Propiedades_NavigationPage;
                 }
                 else

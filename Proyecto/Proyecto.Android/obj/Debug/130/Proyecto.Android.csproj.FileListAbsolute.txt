@@ -3311,3 +3311,7 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\13
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\src\crc64f8908e42fa42e603\PancakeDrawable.java
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\src\crc64f8908e42fa42e603\PancakeViewRenderer.java
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\android\src\crc64f8908e42fa42e603\RoundedCornerOutlineProvider.java
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\estado.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\historial.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\home.png
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto.Android\obj\Debug\130\res\drawable\usuario.png

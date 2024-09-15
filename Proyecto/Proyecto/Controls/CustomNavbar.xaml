@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Controls.CustomNavbar"
+             BackgroundColor="Transparent"
+             Padding="0"
+             HeightRequest="80">
+    <Frame CornerRadius="30"
+           Padding="0"
+           HasShadow="True"
+           VerticalOptions="End"
+           HorizontalOptions="FillAndExpand"
+           BackgroundColor="#B99470"
+           Margin="10,10,10,10"
+           HeightRequest="60">
+        <Grid ColumnSpacing="40"
+              VerticalOptions="Center"
+              HorizontalOptions="FillAndExpand"
+              Padding="10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- Icono de Inicio -->
+            <ImageButton Source="home.png"
+                         BackgroundColor="Transparent"
+                         Grid.Column="0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="35"
+                         HeightRequest="35"
+                         Aspect="AspectFit"
+                         Clicked="OnHomeClicked"
+                         Pressed="OnButtonPressed"
+                         Released="OnButtonReleased" />
+            <!-- Icono de Calendario -->
+            <ImageButton Source="estado.png"
+                         BackgroundColor="Transparent"
+                         Grid.Column="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="35"
+                         HeightRequest="35"
+                         Aspect="AspectFit"
+                         Clicked="OnCalendarClicked"
+                         Pressed="OnButtonPressed"
+                         Released="OnButtonReleased" />
+            <!-- Icono de Historial -->
+            <ImageButton Source="historial.png"
+                         BackgroundColor="Transparent"
+                         Grid.Column="2"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="35"
+                         HeightRequest="35"
+                         Aspect="AspectFit"
+                         Clicked="OnNotificationsClicked"
+                         Pressed="OnButtonPressed"
+                         Released="OnButtonReleased" />
+            <!-- Icono de ConfiguraciÃ³n -->
+            <ImageButton Source="usuario.png"
+                         BackgroundColor="Transparent"
+                         Grid.Column="3"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="35"
+                         HeightRequest="35"
+                         Aspect="AspectFit"
+                         Clicked="OnSettingsClicked"
+                         Pressed="OnButtonPressed"
+                         Released="OnButtonReleased" />
+        </Grid>
+    </Frame>
+</ContentView>
