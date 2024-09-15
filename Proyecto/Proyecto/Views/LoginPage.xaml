@@ -20,7 +20,7 @@
                FontSize="18"
                TextColor="Black" />
         <Frame CornerRadius="25"
-               BorderColor="#5046e5"
+               BorderColor="#ff9810"
                Padding="10"
                Margin="0,0,0,10">
             <Grid ColumnDefinitions="Auto,*"
@@ -47,7 +47,7 @@
                TextColor="Black"
                FontSize="18" />
         <Frame CornerRadius="25"
-               BorderColor="#5046e5"
+               BorderColor="#ff9810"
                Padding="10">
             <Grid ColumnDefinitions="Auto,*,Auto"
                   ColumnSpacing="10">
@@ -85,7 +85,7 @@
                 </Image>
             </Grid>
         </Frame>
-        <Frame BackgroundColor="#5046E5"
+        <Frame BackgroundColor="#ff9810"
                CornerRadius="20"
                Padding="10,12"
                Margin="0,20,0,10"
@@ -123,7 +123,7 @@
                           TextColor="Black" />
                     <Span Text="Sign Up"
                           FontSize="18"
-                          TextColor="Blue">
+                          TextColor="#ff9810">
                         <Span.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnRegisterClicked" />
                         </Span.GestureRecognizers>
@@ -137,7 +137,7 @@
                 <FormattedString>
                     <Span Text="Forgot Password"
                           FontSize="18"
-                          TextColor="Blue">
+                          TextColor="#ff9810">
                         <Span.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnForgotPasswordClicked" />
                         </Span.GestureRecognizers>

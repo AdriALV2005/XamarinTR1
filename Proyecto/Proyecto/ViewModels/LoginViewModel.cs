@@ -74,8 +74,8 @@ namespace Proyecto.ViewModels
                         FirstName = userData.FirstName,
                         LastName = userData.LastName,
                         PhoneNumber = userData.PhoneNumber,
-                        Email = userData.EmailField
-                        // Add other properties as needed
+                        Email = userData.EmailField,
+                        Password = userData.PasswordField
                     };
 
                     var Propiedades_NavigationPage = new NavigationPage(profilePage);

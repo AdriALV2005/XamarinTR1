@@ -6,50 +6,46 @@
              xmlns:local="clr-namespace:Proyecto.Views"
              x:Class="Proyecto.Views.OnboardingPage"
              BackgroundColor="Transparent">
-
     <ContentPage.BindingContext>
-        <viewmodel:OnboardingViewModel/>
+        <viewmodel:OnboardingViewModel />
     </ContentPage.BindingContext>
-
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <!-- Para el botón 'Saltar' -->
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
                 <!-- Para el CarouselView -->
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <!-- Para la barra de progreso -->
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <!-- Para el botón 'Next' -->
             </Grid.RowDefinitions>
-
             <!-- PancakeView con gradiente de arriba hacia abajo -->
-            <gradient:PancakeView Grid.RowSpan="4" BackgroundColor="Transparent">
+            <gradient:PancakeView Grid.RowSpan="4"
+                                  BackgroundColor="Transparent">
                 <gradient:PancakeView.BackgroundGradientStops>
                     <gradient:GradientStopCollection>
-                        <gradient:GradientStop Color="#d4a373" Offset="0.0"/>
-                        <gradient:GradientStop Color="#d4a373" Offset="1.0"/>
+                        <gradient:GradientStop Color="White"
+                                               Offset="0.0" />
+                        <gradient:GradientStop Color="White"
+                                               Offset="1.0" />
                     </gradient:GradientStopCollection>
                 </gradient:PancakeView.BackgroundGradientStops>
             </gradient:PancakeView>
-
             <!-- Botón 'Saltar' en el extremo superior derecho -->
-            <Button
-                Grid.Row="0"
-                Margin="20,20,20,0"
-                BackgroundColor="#432818"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                Text="Saltar"
-                Command="{Binding SkipCommand}"
-                TextColor="White"
-                FontSize="16"
-                FontAttributes="Bold"
-                BorderColor="White"
-                BorderWidth="1"
-                CornerRadius="20"/>
-
+            <Button Grid.Row="0"
+                    Margin="20,20,20,0"
+                    BackgroundColor="#ff9810"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Text="Saltar"
+                    Command="{Binding SkipCommand}"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    BorderWidth="1"
+                    CornerRadius="20" />
             <!-- CarouselView para el contenido principal -->
             <CarouselView Grid.Row="1"
                           ItemsSource="{Binding Boardings}"
@@ -57,26 +53,26 @@
                           PositionChanged="OnCarouselPositionChanged">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <local:WalkthroughItemPage/>
+                        <local:WalkthroughItemPage />
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
-
             <!-- Barra de progreso -->
-            <Grid Grid.Row="2" Padding="20" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <Grid Grid.Row="2"
+                  Padding="20"
+                  VerticalOptions="End"
+                  HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-
                 <!-- Fondo de la barra de progreso -->
                 <BoxView x:Name="ProgressBarBackground"
-                         Color="#ffff"
+                         Color="orange"
                          CornerRadius="60"
                          HeightRequest="8"
                          VerticalOptions="Center"
                          HorizontalOptions="FillAndExpand" />
-
                 <!-- Franja de la barra de progreso que se anima -->
                 <BoxView x:Name="ProgressBarForeground"
                          Color="#432818"
@@ -85,21 +81,19 @@
                          VerticalOptions="Center"
                          HorizontalOptions="Start" />
             </Grid>
-
             <!-- Botón 'Next' en la parte inferior -->
-            <Button
-                Grid.Row="3"
-                Margin="0,0,0,30"
-                BackgroundColor="#432818"
-                CornerRadius="25"
-                HeightRequest="55"
-                HorizontalOptions="Center"
-                VerticalOptions="End"
-                Text="{Binding NextButtonText}"
-                Command="{Binding NextCommand}"
-                FontSize="20"
-                WidthRequest="280"
-                TextColor="White"/>
+            <Button Grid.Row="3"
+                    Margin="0,0,0,30"
+                    BackgroundColor="#ff9810"
+                    CornerRadius="25"
+                    HeightRequest="55"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Text="{Binding NextButtonText}"
+                    Command="{Binding NextCommand}"
+                    FontSize="20"
+                    WidthRequest="280"
+                    TextColor="White" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

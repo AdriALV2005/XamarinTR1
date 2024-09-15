@@ -1,12 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto.App">
     <Application.Resources>
         <ResourceDictionary>
-            <OnPlatform x:Key="FontFamily" x:TypeArguments="x:String">
-                <On Platform="iOS" Value="Arial"/>
-                <On Platform="Android" Value="Arial"/>
+            <OnPlatform x:Key="FontFamily"
+                        x:TypeArguments="x:String">
+                <On Platform="iOS"
+                    Value="Arial" />
+                <On Platform="Android"
+                    Value="Arial" />
             </OnPlatform>
         </ResourceDictionary>
     </Application.Resources>

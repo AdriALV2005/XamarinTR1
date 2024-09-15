@@ -18,5 +18,10 @@ namespace Proyecto.Views
             InitializeComponent();
             BindingContext = new AuthViewModel(Navigation);
         }
+        private async void OnChangePasswordTapped(object sender, EventArgs e)
+        {
+            // Navegar a la página de cambio de contraseña
+            await Navigation.PushAsync(new ResetPasswordPage());
+        }
     }
 }

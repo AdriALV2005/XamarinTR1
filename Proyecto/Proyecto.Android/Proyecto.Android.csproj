@@ -143,8 +143,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\estado.png" />
     <AndroidResource Include="Resources\drawable\historial.png" />
-    <AndroidResource Include="Resources\drawable\home.png" />
     <AndroidResource Include="Resources\drawable\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

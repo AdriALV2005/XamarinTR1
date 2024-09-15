@@ -4,7 +4,14 @@
              xmlns:controls="clr-namespace:Proyecto.Controls"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proyecto.Views.ProfilePage"
-             BackgroundColor="#f7f9fc">
+             BackgroundColor="#f7f9fc"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <TapGestureRecognizer x:Key="ChangePasswordTapGestureRecognizer"
+                                  Tapped="OnChangePasswordTapped" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <!-- Usar Grid para superponer el CustomNavbar sobre el contenido -->
     <Grid>
         <!-- Definir dos filas en la cuadrícula -->
@@ -71,7 +78,6 @@
                             </Binding>
                         </Label.Text>
                     </Label>
-                    <!-- Dirección -->
                     <Label FontSize="18"
                            TextColor="#555"
                            Margin="0,0,0,5">
@@ -83,38 +89,27 @@
                             </Binding>
                         </Label.Text>
                     </Label>
-                    <!-- Fecha de Nacimiento -->
-                    <Label Text="🎂 01/01/1990"
-                           FontSize="18"
+                    <Label FontSize="18"
                            TextColor="#555"
-                           Margin="0,0,0,20" />
-                    <!-- Descripción breve -->
-                    <Label Text="Descripción breve sobre el usuario. Aquí puedes añadir detalles sobre la experiencia, intereses o cualquier información relevante."
-                           FontSize="16"
-                           TextColor="#777"
-                           Margin="0,0,0,20"
-                           LineBreakMode="WordWrap"
-                           MaxLines="3" />
+                           Margin="0,0,0,5">
+                        <Label.Text>
+                            <Binding Path="Password">
+                                <Binding.StringFormat>                                    
+                                    🔒 {0}
+                                </Binding.StringFormat>
+                            </Binding>
+                        </Label.Text>
+                    </Label>
+                    <Label Text="Cambiar contraseña"
+                           FontSize="18"
+                           TextColor="Red"
+                           HorizontalOptions="Center"
+                           Padding="0,10">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnChangePasswordTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
-                <!-- Biografía -->
-                <Frame CornerRadius="15"
-                       Padding="15"
-                       BackgroundColor="White"
-                       Margin="0,0,0,20"
-                       HasShadow="True">
-                    <StackLayout>
-                        <Label Text="Biografía"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               TextColor="#333" />
-                        <Label Text="Aquí puedes escribir una biografía más extensa sobre el usuario. Este texto puede incluir información sobre sus logros, intereses, y cualquier otra información relevante."
-                               FontSize="16"
-                               TextColor="#666"
-                               LineBreakMode="WordWrap"
-                               MaxLines="5" />
-                    </StackLayout>
-                </Frame>
-                <!-- Historial -->
                 <Frame CornerRadius="15"
                        Padding="15"
                        BackgroundColor="White"

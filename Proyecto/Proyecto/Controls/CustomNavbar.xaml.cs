@@ -26,28 +26,27 @@ namespace Proyecto.Controls
         }
 
        
-        private async void OnHomeClicked(object sender, EventArgs e)
+        private async void Home(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SpacesPage());  
+        }
+
+  
+        private async void Estado(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ProfilePage());  
         }
 
-  
-        private async void OnCalendarClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new OnboardingPage());  
-        }
-
       
-        private async void OnNotificationsClicked(object sender, EventArgs e)
+        private async void Usuario(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());  
+            await Navigation.PushAsync(new ParkingPage());  
         }
 
-      
-        private async void OnSettingsClicked(object sender, EventArgs e)
+        private async void Historial(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterPage());  
-        }
+            await Navigation.PushAsync(new ProfilePage());
 
+        }
     }
 }

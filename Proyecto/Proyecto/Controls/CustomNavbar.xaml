@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto.Controls.CustomNavbar"
-             BackgroundColor="Transparent"
+             BackgroundColor="#ff9810"
              Padding="0"
              HeightRequest="80">
     <Frame CornerRadius="30"
@@ -10,7 +10,7 @@
            HasShadow="True"
            VerticalOptions="End"
            HorizontalOptions="FillAndExpand"
-           BackgroundColor="#B99470"
+           BackgroundColor="White"
            Margin="10,10,10,10"
            HeightRequest="60">
         <Grid ColumnSpacing="40"
@@ -29,10 +29,10 @@
                          Grid.Column="0"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         WidthRequest="35"
-                         HeightRequest="35"
+                         WidthRequest="30"
+                         HeightRequest="30"
                          Aspect="AspectFit"
-                         Clicked="OnHomeClicked"
+                         Clicked="Home"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
             <!-- Icono de Calendario -->
@@ -41,10 +41,10 @@
                          Grid.Column="1"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         WidthRequest="35"
-                         HeightRequest="35"
+                         WidthRequest="30"
+                         HeightRequest="30"
                          Aspect="AspectFit"
-                         Clicked="OnCalendarClicked"
+                         Clicked="Estado"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
             <!-- Icono de Historial -->
@@ -53,10 +53,10 @@
                          Grid.Column="2"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         WidthRequest="35"
-                         HeightRequest="35"
+                         WidthRequest="30"
+                         Clicked="Historial"
+                         HeightRequest="30"
                          Aspect="AspectFit"
-                         Clicked="OnNotificationsClicked"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
             <!-- Icono de ConfiguraciÃ³n -->
@@ -65,10 +65,10 @@
                          Grid.Column="3"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
-                         WidthRequest="35"
-                         HeightRequest="35"
+                         WidthRequest="30"
+                         HeightRequest="30"
                          Aspect="AspectFit"
-                         Clicked="OnSettingsClicked"
+                         Clicked="Usuario"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
         </Grid>
