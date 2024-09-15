@@ -22,6 +22,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <!-- Icono de Inicio -->
             <ImageButton Source="home.png"
@@ -71,6 +72,17 @@
                          Clicked="Usuario"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
+            <ImageButton Source="usuario.png"
+              BackgroundColor="Transparent"
+              Grid.Column="4"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              WidthRequest="30"
+              HeightRequest="30"
+              Aspect="AspectFit"
+              Clicked="Ticket"
+              Pressed="OnButtonPressed"
+              Released="OnButtonReleased" />
         </Grid>
     </Frame>
 </ContentView>

@@ -1,0 +1,67 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Proyecto.Views" xmlns:controls="clr-namespace:Proyecto.Controls"
+              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Proyecto.Views.ReservationPage" NavigationPage.HasNavigationBar="False"
+             Title="Reservar">
+
+        <ContentPage.BindingContext>
+        <local:ReservationViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+    <StackLayout Padding="20">
+
+        <!-- Hora de Ingreso (automática) -->
+        <Label Text="Hora de Ingreso" />
+        <Label Text="{Binding HoraIngreso, StringFormat='{}{0:HH:mm}'}" />
+
+        <!-- Seleccionar horas de reservación -->
+        <Label Text="Seleccionar horas de reservación" />
+        <Stepper x:Name="HorasReservacionStepper"
+                 Minimum="1"
+                 Maximum="12"
+                 Increment="1"
+                 Value="{Binding HorasReservacion}"
+                 HorizontalOptions="FillAndExpand" />
+        <Label Text="{Binding HorasReservacion, StringFormat='Horas seleccionadas: {0}'}" />
+
+        <!-- Hora de Salida (automática) -->
+        <Label Text="Hora de Salida" />
+        <Label Text="{Binding HoraSalida, StringFormat='{}{0:HH:mm}'}" />
+
+        <!-- Selección de tipo de vehículo -->
+        <Label Text="Seleccionar tipo de vehículo" />
+        <Picker x:Name="TipoVehiculoPicker"
+                SelectedItem="{Binding TipoVehiculoSeleccionado}"
+                Title="Seleccionar tipo de vehículo">
+            <Picker.Items>
+                <x:String>Pequeño</x:String>
+                <x:String>Mediano</x:String>
+                <x:String>Grande</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <!-- Cálculos -->
+        <Label Text="Pago por Hora:" />
+        <Label Text="{Binding PagoPorHora, StringFormat='S/. {0:F2}'}" />
+
+        <Label Text="Tipo de Vehículo:" />
+        <Label Text="{Binding CostoVehiculo, StringFormat='S/. {0:F2}'}" />
+
+        <Label Text="Total a Pagar:" />
+        <Label Text="{Binding TotalPagar, StringFormat='S/. {0:F2}'}" />
+
+        <!-- Botón de Pagar -->
+        <Button Text="Pagar" 
+                Command="{Binding PagarCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+    </StackLayout>
+        <controls:CustomNavbar Grid.Row="1"
+                       VerticalOptions="End"
+                       HorizontalOptions="FillAndExpand"
+                       Padding="0"
+                       Margin="0" />
+    </Grid>
+</ContentPage>

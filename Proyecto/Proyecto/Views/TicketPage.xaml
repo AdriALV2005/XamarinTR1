@@ -1,0 +1,35 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.TicketPage"  NavigationPage.HasNavigationBar="False"
+             Title="Ticket de Reserva"
+            
+             >
+
+    <StackLayout Padding="20" HorizontalOptions="Center" >
+        <!-- Título -->
+        <Label Text="Ticket de Reserva" FontSize="Large" HorizontalOptions="Center"/>
+
+        <!-- Hora de Ingreso -->
+        <Label Text="Hora de Ingreso:" />
+        <Label Text="{Binding HoraIngreso, StringFormat='{0:HH:mm}'}" />
+
+        <!-- Hora de Salida -->
+        <Label Text="Hora de Salida:" />
+        <Label Text="{Binding HoraSalida, StringFormat='{0:HH:mm}'}" />
+
+        <!-- Pago por Hora -->
+        <Label Text="Pago por Hora:" />
+        <Label Text="{Binding PagoPorHora, StringFormat='S/. {0:F2}'}" />
+
+        <!-- Tipo de Vehículo -->
+        <Label Text="Tipo de Vehículo:" />
+        <Label Text="{Binding TipoVehiculo}" />
+
+        <!-- Total a Pagar -->
+        <Label Text="Total a Pagar:" FontSize="Large" />
+        <Label Text="{Binding TotalPagar, StringFormat='S/. {0:F2}'}" />
+
+        <!-- Botón para cerrar -->
+        <Button Text="Cerrar" Command="{Binding CerrarCommand}" HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>
