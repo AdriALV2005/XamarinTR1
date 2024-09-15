@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.ParkingPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!-- Título -->
+            <Label Text="Aparcamiento 😍" 
+               FontSize="35" 
+               HorizontalOptions="Center"
+               Margin="0,30"
+               FontAttributes="Bold"
+               TextColor="Black"/>
+
+            <Label Text="Seleccione una Sede:" 
+               FontSize="Large" 
+               HorizontalOptions="Start"
+               Margin="20,30"
+               TextColor="Black"
+               TextDecorations="Underline"    />
+
+            <!-- Grid de espacios de aparcamiento -->
+            <Grid Margin="20,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Espacios de aparcamiento -->
+                <Button Text="SEDE 1 - Independencia" 
+            BackgroundColor="#2C3E50" 
+            TextColor="White"
+            FontAttributes="Bold"
+            Grid.Row="0" Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="FillAndExpand"
+            Margin="0,20"
+            CornerRadius="12"
+            />
+
+                <Button Text="SEDE 2 - Comas" 
+            BackgroundColor="#2C3E50" 
+            TextColor="White"
+            FontAttributes="Bold"
+            Grid.Row="1" Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="FillAndExpand"
+            Margin="0,15"
+            CornerRadius="12"/>
+
+                <Button Text="SEDE 3 - Cercado de Lima" 
+            BackgroundColor="#2C3E50" 
+            TextColor="White"
+            FontAttributes="Bold"
+            Grid.Row="2" Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="FillAndExpand"
+            Margin="0,15"
+            CornerRadius="12"    />
+
+                <Button Text="SEDE 4 - San Miguel" 
+            BackgroundColor="#2C3E50" 
+            TextColor="White"
+            FontAttributes="Bold"
+            Grid.Row="3" Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalOptions="FillAndExpand"
+            Margin="0,15"
+            CornerRadius="12"/>
+
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

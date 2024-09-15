@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\parkingpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\parkingpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\views\\spacespage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\views\\spacespage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|c:\\users\\adrim\\onedrive\\documents\\xamarin\\proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7843067C-6791-4D0E-A9A3-D6CEC99FE07E}|Proyecto\\Proyecto\\Proyecto.csproj|solutionrelative:proyecto\\proyecto\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,11 +58,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\App.xaml.cs",
+              "RelativeToolTip": "Proyecto\\Proyecto\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T04:33:51.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParkingPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ParkingPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\ParkingPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ParkingPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\ParkingPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-15T04:33:20.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SpacesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\SpacesPage.xaml",
+              "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\SpacesPage.xaml",
+              "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\SpacesPage.xaml",
+              "RelativeToolTip": "Proyecto\\Proyecto\\Views\\SpacesPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-15T04:32:54.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ProfilePage.xaml",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ProfilePage.xaml",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\ProfilePage.xaml",
@@ -58,12 +109,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\ProfilePage.xaml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAACkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-15T04:24:57.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:24:57.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ProfileViewModel.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\ProfileViewModel.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\ProfileViewModel.cs",
@@ -71,25 +121,24 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\ProfileViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T04:24:42.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:24:42.583Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
               "ToolTip": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
               "RelativeToolTip": "Proyecto\\Proyecto\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAiwFkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-15T04:23:46.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ProfilePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\ProfilePage.xaml.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\ProfilePage.xaml.cs",
@@ -97,12 +146,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\ProfilePage.xaml.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAkwBMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T04:23:06.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:23:06.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "RegisterPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
@@ -110,12 +158,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T04:22:42.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:22:42.082Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "LoginPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
@@ -123,12 +170,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T04:22:20.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:22:20.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\LoginPage.xaml",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
@@ -136,12 +182,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\LoginPage.xaml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-15T04:22:16.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:22:16.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "RegisterPage.xaml",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
@@ -149,12 +194,11 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Views\\RegisterPage.xaml",
               "ViewState": "AgIAAJUAAAAAAAAAAAAAAKsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-15T04:01:05.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:01:05.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "DBConn.cs",
               "DocumentMoniker": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Conexion\\DBConn.cs",
               "RelativeDocumentMoniker": "Proyecto\\Proyecto\\Conexion\\DBConn.cs",
@@ -162,8 +206,7 @@
               "RelativeToolTip": "Proyecto\\Proyecto\\Conexion\\DBConn.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T04:00:38.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T04:00:38.281Z"
             }
           ]
         }
