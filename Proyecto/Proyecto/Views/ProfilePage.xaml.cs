@@ -16,7 +16,7 @@ namespace Proyecto.Views
         public ProfilePage()
         {
             InitializeComponent();
-            BindingContext = new ProfileViewModel();
+            BindingContext = new AuthViewModel(Navigation);
         }
     }
 }

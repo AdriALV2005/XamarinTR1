@@ -12,7 +12,7 @@ namespace Proyecto
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ParkingPage());
+            MainPage = new NavigationPage(new OnboardingPage());
         }
 
         protected override void OnStart()

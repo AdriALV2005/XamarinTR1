@@ -5,7 +5,6 @@ using Proyecto.Conexion;
 using Proyecto.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -58,11 +57,14 @@ namespace Proyecto.ViewModels
             get => phoneNumber;
             set => SetValue(ref phoneNumber, value);
         }
+
+        public string FullName => $"{FirstName} {LastName}";
         #endregion
 
         #region Commands
         public Command ResetPasswordCommand { get; }
         public Command RegisterCommand { get; }
+        public Command LoginCommand { get; }
         #endregion
 
         #region Constructor

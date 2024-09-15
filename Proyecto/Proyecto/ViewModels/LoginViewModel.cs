@@ -67,7 +67,7 @@ namespace Proyecto.ViewModels
                     var userData = user.Object;
 
                     var profilePage = new ProfilePage();
-                    profilePage.BindingContext = new ProfileViewModel
+                    profilePage.BindingContext = new AuthViewModel(Navigation)
                     {
                         FirstName = userData.FirstName,
                         LastName = userData.LastName,
