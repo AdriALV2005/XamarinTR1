@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Proyecto.Views
         public SpacesPage()
         {
             InitializeComponent();
+            BindingContext = new ParkingSpacesViewModel();
         }
     }
 }

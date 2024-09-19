@@ -5,18 +5,19 @@
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False">
     <StackLayout Padding="30"
+    
                  VerticalOptions="Center">
-        <Label Text="Sign In To Your Account"
+        <Label Text="Iniciar Sesión"
                TextColor="Black"
                FontAttributes="Bold"
                FontSize="35"
                HorizontalOptions="Center" />
-        <Label Text="Unleash your inner sloth 4.0 right now"
+        <Label Text="Inicia sesión con tu cuenta o registrate! ❤️"
                Margin="0,0,0,40"
                FontSize="18"
                HorizontalOptions="Center"
                TextColor="Gray" />
-        <Label Text="Email Address"
+        <Label Text="Ingresa aquí tu correo electronico ..."
                FontSize="18"
                TextColor="Black" />
         <Frame CornerRadius="25"
@@ -36,14 +37,14 @@
                 <Entry Grid.Column="1"
                        x:Name="txtemail"
                        TextColor="Black"
-                       Placeholder="Email"
+                       Placeholder="Correo Electronico"
                        PlaceholderColor="Black"
                        Text="{Binding txtemail}"
                        VerticalOptions="Center"
                        Keyboard="Email" />
             </Grid>
         </Frame>
-        <Label Text="Password"
+        <Label Text="Ingresa aquí tu contraseña"
                TextColor="Black"
                FontSize="18" />
         <Frame CornerRadius="25"
@@ -64,7 +65,7 @@
                 <Entry Grid.Column="1"
                        x:Name="txtclave"
                        TextColor="Black"
-                       Placeholder="Password"
+                       Placeholder="Contraseña"
                        PlaceholderColor="Black"
                        Text="{Binding txtclave}"
                        VerticalOptions="Center"
@@ -95,7 +96,7 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Sign In"
+                <Label Text="Ingresar"
                        TextColor="White"
                        FontSize="18"
                        FontAttributes="Bold"
@@ -118,10 +119,10 @@
                VerticalOptions="Center">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="Don't have an account? "
+                    <Span Text="¿No tienes una cuenta?"
                           FontSize="18"
                           TextColor="Black" />
-                    <Span Text="Sign Up"
+                    <Span Text="  Registrarse"
                           FontSize="18"
                           TextColor="#ff9810">
                         <Span.GestureRecognizers>
@@ -135,7 +136,7 @@
                VerticalOptions="Center">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="Forgot Password"
+                    <Span Text="Me olvidé mi contraseña 😥"
                           FontSize="18"
                           TextColor="#ff9810">
                         <Span.GestureRecognizers>

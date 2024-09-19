@@ -2,23 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto.Views.Prueba"
-             Title="Espacios de Estacionamiento">
+             xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
+             x:Name="ParkingSpacesPage">
+    <ContentPage.BindingContext>
+        <viewModels:ParkingSpacesViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Cargar Espacios" Command="{Binding LoadParkingSpacesCommand}" />
-            <ListView ItemsSource="{Binding ParkingSpaces}" HasUnevenRows="True">
+            <ListView ItemsSource="{Binding ParkingSpaces}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding id}" />
-                                <Label Text="{Binding isOccupied, StringFormat='Ocupado: {0}'}" />
+                                <Label Text="{Binding SpaceNumber}" />
+                                <Label Text="{Binding IsOccupied, StringFormat='Is Occupied: {0}'}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

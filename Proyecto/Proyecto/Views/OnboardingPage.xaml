@@ -23,12 +23,12 @@
             </Grid.RowDefinitions>
             <!-- PancakeView con gradiente de arriba hacia abajo -->
             <gradient:PancakeView Grid.RowSpan="4"
-                                  BackgroundColor="Transparent">
+                                  BackgroundColor="#FFEAC5">
                 <gradient:PancakeView.BackgroundGradientStops>
                     <gradient:GradientStopCollection>
-                        <gradient:GradientStop Color="White"
+                        <gradient:GradientStop Color="#FFEAC5"
                                                Offset="0.0" />
-                        <gradient:GradientStop Color="White"
+                        <gradient:GradientStop Color="#FFEAC5"
                                                Offset="1.0" />
                     </gradient:GradientStopCollection>
                 </gradient:PancakeView.BackgroundGradientStops>

@@ -1,81 +1,118 @@
-﻿using Firebase.Database;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Firebase.Database;
 using Firebase.Database.Query;
 using Proyecto.Conexion;
-using Proyecto.Models; // Asegúrate de agregar esta directiva using para la nueva ubicación de ParkingSpace
-using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
+using Proyecto.Models;
+using Proyecto.Views;
 using Xamarin.Forms;
 
 namespace Proyecto.ViewModels
 {
-    public class ParkingSpacesViewModel : BaseViewModel
+    public class ParkingSpacesViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<ParkingSpace> _parkingSpaces;
-        public ObservableCollection<ParkingSpace> ParkingSpaces
+        public Command<ParkingSpaceModel> CheckAndNavigateCommand { get; }
+
+        private ObservableCollection<ParkingSpaceModel> _parkingSpaces;
+        public ObservableCollection<ParkingSpaceModel> ParkingSpaces
         {
             get => _parkingSpaces;
-            set => SetValue(ref _parkingSpaces, value);
+            set
+            {
+                _parkingSpaces = value;
+                OnPropertyChanged();
+            }
         }
 
-        public Command LoadParkingSpacesCommand { get; }
+        private readonly FirebaseClient _firebaseClient;
 
         public ParkingSpacesViewModel()
         {
-            ParkingSpaces = new ObservableCollection<ParkingSpace>();
-            LoadParkingSpacesCommand = new Command(async () => await LoadParkingSpacesAsync());
+            _firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
+            ParkingSpaces = new ObservableCollection<ParkingSpaceModel>();
+            SubscribeToParkingSpaceChanges();
+            CheckAndNavigateCommand = new Command<ParkingSpaceModel>(OnCheckAndNavigate);
         }
 
-        private async Task LoadParkingSpacesAsync()
+        private async void OnCheckAndNavigate(ParkingSpaceModel parkingSpace)
         {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
+            if (parkingSpace.IsOccupied)
             {
-                Debug.WriteLine("Iniciando carga de espacios de estacionamiento...");
-                var firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
+                // Mostrar pop-up si el espacio está ocupado
+                await Application.Current.MainPage.DisplayAlert("Espacio ocupado", "Este espacio está ocupado.", "OK");
+            }
+            else
+            {
+                // Redirigir a ReservationPage si no está ocupado
+                await Application.Current.MainPage.Navigation.PushAsync(new ReservationPage(parkingSpace));
+            }
+        }
 
-                Debug.WriteLine($"URL de Firebase: {DBConn.FirebaseUrl}");
-
-                var parkingSpaces = await firebaseClient
-                    .Child("parkingSpaces")
-                    .OnceAsync<ParkingSpace>();
-
-                ParkingSpaces.Clear();
-                foreach (var space in parkingSpaces)
+        // Suscribir a cambios en tiempo real en Firebase
+        private void SubscribeToParkingSpaceChanges()
+        {
+            // Escuchar los cambios en tiempo real del nodo "parkingSpaces"
+            _firebaseClient
+                .Child("parkingSpaces")
+                .AsObservable<ParkingSpaceModel>()
+                .Subscribe((dbEvent) =>
                 {
-                    ParkingSpaces.Add(new ParkingSpace
+                    if (dbEvent.Object == null)
+                        return;
+
+                    switch (dbEvent.EventType)
                     {
-                        SpaceID = space.Object.SpaceID,
-                        SpaceNumber = space.Object.SpaceNumber,
-                        IsOccupied = space.Object.IsOccupied,
-                        Place = space.Object.Place
-                    });
-                }
+                        case Firebase.Database.Streaming.FirebaseEventType.InsertOrUpdate:
+                            UpdateOrAddParkingSpace(dbEvent.Object);
+                            break;
+                        case Firebase.Database.Streaming.FirebaseEventType.Delete:
+                            RemoveParkingSpace(dbEvent.Object);
+                            break;
+                    }
+                });
+        }
 
-                Debug.WriteLine($"Espacios de estacionamiento cargados: {ParkingSpaces.Count}");
-            }
-            catch (Exception ex)
+        // Actualizar o agregar un espacio de aparcamiento en la colección
+        private void UpdateOrAddParkingSpace(ParkingSpaceModel updatedSpace)
+        {
+            var existingSpace = ParkingSpaces.FirstOrDefault(p => p.SpaceID == updatedSpace.SpaceID);
+            if (existingSpace != null)
             {
-                Debug.WriteLine($"Error al cargar espacios de estacionamiento: {ex.Message}");
-                Debug.WriteLine($"StackTrace: {ex.StackTrace}");
-
-                if (ex.InnerException != null)
-                {
-                    Debug.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-                    Debug.WriteLine($"Inner StackTrace: {ex.InnerException.StackTrace}");
-                }
-
-                await Application.Current.MainPage.DisplayAlert("Error", $"No se pudieron cargar los espacios de estacionamiento: {ex.Message}", "OK");
+                // Si el espacio ya existe, actualiza sus datos
+                existingSpace.SpaceNumber = updatedSpace.SpaceNumber;
+                existingSpace.IsOccupied = updatedSpace.IsOccupied;
             }
-            finally
+            else
             {
-                IsBusy = false;
+                // Si el espacio no existe, lo agrega
+                ParkingSpaces.Add(updatedSpace);
             }
+            // Forzar la actualización de la interfaz
+            Device.BeginInvokeOnMainThread(() => OnPropertyChanged(nameof(ParkingSpaces)));
+        }
+
+        // Eliminar un espacio de aparcamiento
+        private void RemoveParkingSpace(ParkingSpaceModel spaceToRemove)
+        {
+            var existingSpace = ParkingSpaces.FirstOrDefault(p => p.SpaceID == spaceToRemove.SpaceID);
+            if (existingSpace != null)
+            {
+                ParkingSpaces.Remove(existingSpace);
+                // Forzar la actualización de la interfaz
+                Device.BeginInvokeOnMainThread(() => OnPropertyChanged(nameof(ParkingSpaces)));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

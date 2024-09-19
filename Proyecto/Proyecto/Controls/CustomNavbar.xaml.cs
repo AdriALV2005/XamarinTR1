@@ -32,25 +32,20 @@ namespace Proyecto.Controls
         }
 
 
-        private async void Estado(object sender, EventArgs e)
+
+        private async void Usuario(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ProfilePage());
         }
 
-
-        private async void Usuario(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ParkingPage());
-        }
-
         private async void Historial(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ReservationPage());
+            await Navigation.PushAsync(new ProfilePage());
 
         }
         private async void Ticket(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TicketPage());
+            await Navigation.PushAsync(new ProfilePage());
 
         }
     }

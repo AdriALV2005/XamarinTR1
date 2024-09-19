@@ -1,86 +1,127 @@
-﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:Proyecto.Controls"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proyecto.Views.ParkingPage"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="White">
+             BackgroundColor="Black">
+
     <ContentPage.Content>
-        <Grid>
-            <StackLayout>
-                <!-- Título -->
-                <Label Text="Aparcamiento 😍"
-                       FontSize="35"
-                       HorizontalOptions="Center"
-                       Margin="0,30"
-                       FontAttributes="Bold"
-                       TextColor="Black" />
-                <Label Text="Seleccione una Sede:"
-                       FontSize="Large"
-                       HorizontalOptions="Start"
-                       Margin="20,30"
-                       TextColor="Black"
-                       TextDecorations="Underline" />
-                <!-- Grid de espacios de aparcamiento -->
-                <Grid Margin="20,15">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <!-- Espacios de aparcamiento -->
-                    <Button Text="SEDE 1 - Independencia"
-                            BackgroundColor="#2C3E50"
-                            TextColor="White"
-                            FontAttributes="Bold"
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            VerticalOptions="FillAndExpand"
-                            Margin="0,20"
-                            CornerRadius="12" />
-                    <Button Text="SEDE 2 - Comas"
-                            BackgroundColor="#2C3E50"
-                            TextColor="White"
-                            FontAttributes="Bold"
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            VerticalOptions="FillAndExpand"
-                            Margin="0,15"
-                            CornerRadius="12" />
-                    <Button Text="SEDE 3 - Cercado de Lima"
-                            BackgroundColor="#2C3E50"
-                            TextColor="White"
-                            FontAttributes="Bold"
-                            Grid.Row="2"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            VerticalOptions="FillAndExpand"
-                            Margin="0,15"
-                            CornerRadius="12" />
-                    <Button Text="SEDE 4 - San Miguel"
-                            BackgroundColor="#2C3E50"
-                            TextColor="White"
-                            FontAttributes="Bold"
-                            Grid.Row="3"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            VerticalOptions="FillAndExpand"
-                            Margin="0,15"
-                            CornerRadius="12" />
-                </Grid>
+        <StackLayout Padding="10" Spacing="15">
+
+            <!-- Sección superior (retroceso y coche) -->
+            <Grid VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Botón de retroceso -->
+                <ImageButton Source="back_icon.png"
+                             Grid.Column="0"
+                             WidthRequest="40"
+                             HeightRequest="40"
+                             BackgroundColor="Transparent"
+                             HorizontalOptions="Start"/>
+
+                <!-- Información del coche -->
+                <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
+                    <Image Source="car_placeholder.png" WidthRequest="50" HeightRequest="30"/>
+                    <Label Text="Porsche 375"
+                           FontSize="18"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           Margin="10,0"/>
+                </StackLayout>
+            </Grid>
+
+            <!-- Título central -->
+            <Label Text="Choose Space!"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+
+            <!-- Descripción del nivel de estacionamiento -->
+            <Label Text="Parking 3-RD Floor"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"/>
+
+            <!-- Espacios de aparcamiento -->
+            <Grid ColumnSpacing="20" RowSpacing="20" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Espacio seleccionado -->
+                <StackLayout Grid.Row="0" Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_selected.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="Selected: 321" TextColor="White" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Espacios disponibles -->
+                <StackLayout Grid.Row="0" Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_top_view.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="326 Available" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_top_view.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="323 Available" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_top_view.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="328 Available" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_top_view.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="324 Available" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" Spacing="5" HorizontalOptions="Center">
+                    <Image Source="car_top_view.png" WidthRequest="100" HeightRequest="50"/>
+                    <Label Text="329 Available" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+
+            <!-- Sección de selección de tiempo -->
+            <Label Text="How Long?" TextColor="White" FontSize="Medium" HorizontalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Button Text="30 Min"
+                        WidthRequest="100"
+                        BackgroundColor="#505050"
+                        TextColor="White"
+                        BorderRadius="20"/>
+                <Button Text="1 Hour"
+                        WidthRequest="100"
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        BorderRadius="20"/>
+                <Button Text="2 Hours"
+                        WidthRequest="100"
+                        BackgroundColor="#505050"
+                        TextColor="White"
+                        BorderRadius="20"/>
             </StackLayout>
-            <controls:CustomNavbar Grid.Row="1"
-                                   VerticalOptions="End"
-                                   HorizontalOptions="FillAndExpand"
-                                   Padding="0"
-                                   Margin="0" />
-        </Grid>
+
+            <!-- Botón de pago -->
+            <StackLayout HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                <Button Text="Pay Now"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        FontSize="Medium"
+                        WidthRequest="150"
+                        BorderRadius="30"/>
+            </StackLayout>
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

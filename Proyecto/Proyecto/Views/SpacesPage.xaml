@@ -1,11 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:Proyecto.Controls"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:Proyecto.Controls"
+               xmlns:controls="clr-namespace:Proyecto.Controls"
+  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
              x:Class="Proyecto.Views.SpacesPage"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="White">
+    <!-- Definir recursos y conversores -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Conversor de ocupación a color -->
+            <local:OccupiedColorConverter x:Key="OccupiedToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!-- Binding del ViewModel -->
+    <ContentPage.BindingContext>
+        <viewModels:ParkingSpacesViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <StackLayout>
             <!-- Título -->
@@ -15,40 +28,13 @@
                    Margin="0,30"
                    FontAttributes="Bold"
                    TextColor="Black" />
-            <Grid Margin="10,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Label Text="Sede 1:"
-                       FontSize="25"
-                       HorizontalOptions="Start"
-                       Margin="20,20"
-                       TextColor="Black"
-                       TextDecorations="Underline" />
-                <Button Text="MAPA"
-                        BackgroundColor="Orange"
-                        TextColor="white"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        VerticalOptions="FillAndExpand"
-                        Margin="20,15"
-                        CornerRadius="12"
-                        HeightRequest="0" />
-            </Grid>
+            <!-- Encabezado del bloque A -->
             <Label Text="Bloque A:"
-                   FontSize="15"
+                   FontSize="25"
                    HorizontalOptions="Start"
                    Margin="20,20"
-                   TextColor="Black" />
+                   TextColor="Black"
+                   TextDecorations="Underline" />
             <!-- Grid de espacios de aparcamiento -->
             <Grid Margin="20,0">
                 <Grid.RowDefinitions>
@@ -60,159 +46,120 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <!-- Espacios de aparcamiento -->
-                <Button Text="Espacio 1 - libre"
-                        BackgroundColor="SkyBlue"
+                <Button Text="{Binding ParkingSpaces[0].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[0].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
                         TextColor="White"
                         FontSize="12"
                         FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[0]}"
                         Grid.Row="0"
                         Grid.Column="0"
                         VerticalOptions="FillAndExpand"
                         Margin="10,0"
                         CornerRadius="12"
                         HeightRequest="70" />
-                <Button Text="Espacio 2 - Libre"
-                        BackgroundColor="SkyBlue"
+                <Button Text="{Binding ParkingSpaces[1].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[1].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
                         TextColor="White"
                         FontSize="12"
                         FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[1]}"
                         Grid.Row="0"
                         Grid.Column="1"
                         VerticalOptions="FillAndExpand"
                         Margin="10,0"
-                        CornerRadius="12" />
-                <Button Text="Espacio 3 - Ocupado"
-                        BackgroundColor="OrangeRed"
+                        CornerRadius="12"
+                        HeightRequest="70" />
+                <Button Text="{Binding ParkingSpaces[2].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[2].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
                         TextColor="White"
                         FontSize="12"
                         FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,0"
-                        CornerRadius="12" />
-                <Button Text="Espacio 4 - Opcupado"
-                        BackgroundColor="OrangeRed"
-                        TextColor="White"
-                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[2]}"
                         Grid.Row="1"
                         Grid.Column="0"
                         VerticalOptions="FillAndExpand"
                         Margin="10,10"
-                        FontSize="12"
                         CornerRadius="12"
                         HeightRequest="70" />
-                <Button Text="Espacio 5 - Ocupado"
-                        BackgroundColor="OrangeRed"
+                <Button Text="{Binding ParkingSpaces[3].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[3].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
                         TextColor="White"
-                        FontAttributes="Bold"
                         FontSize="12"
+                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[3]}"
                         Grid.Row="1"
                         Grid.Column="1"
                         VerticalOptions="FillAndExpand"
                         Margin="10,10"
-                        CornerRadius="12" />
-                <Button Text="Espacio 6 - Libre"
-                        BackgroundColor="SkyBlue"
+                        CornerRadius="12"
+                        HeightRequest="70" />
+                <Button Text="{Binding ParkingSpaces[4].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[4].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
                         TextColor="White"
-                        FontAttributes="Bold"
                         FontSize="12"
-                        Grid.Row="1"
-                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[4]}"
+                        Grid.Row="2"
+                        Grid.Column="0"
                         VerticalOptions="FillAndExpand"
                         Margin="10,10"
-                        CornerRadius="12" />
+                        CornerRadius="12"
+                        HeightRequest="70" />
+                <Button Text="{Binding ParkingSpaces[5].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[5].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
+                        TextColor="White"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[5]}"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        Margin="10,10"
+                        CornerRadius="12"
+                        HeightRequest="70" />
+                <Button Text="{Binding ParkingSpaces[6].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[6].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
+                        TextColor="White"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[6]}"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        VerticalOptions="FillAndExpand"
+                        Margin="10,10"
+                        CornerRadius="12"
+                        HeightRequest="70" />
+                <Button Text="{Binding ParkingSpaces[7].SpaceNumber}"
+                        BackgroundColor="{Binding ParkingSpaces[7].IsOccupied, Converter={StaticResource OccupiedToColorConverter}}"
+                        TextColor="White"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        Command="{Binding CheckAndNavigateCommand}"
+                        CommandParameter="{Binding ParkingSpaces[7]}"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        Margin="10,10"
+                        CornerRadius="12"
+                        HeightRequest="70" />
             </Grid>
-            <Label Text="Bloque B:"
-                   FontSize="15"
-                   HorizontalOptions="Start"
-                   Margin="20,20"
-                   TextColor="Black" />
-            <!-- Grid de espacios de aparcamiento -->
-            <Grid Margin="20,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <!-- Espacios de aparcamiento -->
-                <Button Text="Espacio 1 - libre"
-                        BackgroundColor="SkyBlue"
-                        TextColor="White"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,0"
-                        CornerRadius="12"
-                        HeightRequest="70" />
-                <Button Text="Espacio 2 - Libre"
-                        BackgroundColor="SkyBlue"
-                        TextColor="White"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,0"
-                        CornerRadius="12" />
-                <Button Text="Espacio 3 - Libre"
-                        BackgroundColor="SkyBlue"
-                        TextColor="White"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,0"
-                        CornerRadius="12" />
-                <Button Text="Espacio 4 - Libre"
-                        BackgroundColor="SkyBlue"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,10"
-                        FontSize="12"
-                        CornerRadius="12"
-                        HeightRequest="70" />
-                <Button Text="Espacio 5 - Ocupado"
-                        BackgroundColor="OrangeRed"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,10"
-                        CornerRadius="12" />
-                <Button Text="Espacio 6 - Ocupado"
-                        BackgroundColor="OrangeRed"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        VerticalOptions="FillAndExpand"
-                        Margin="10,10"
-                        CornerRadius="12" />
-            </Grid>
+
         </StackLayout>
         <controls:CustomNavbar Grid.Row="1"
-                               VerticalOptions="End"
-                               HorizontalOptions="FillAndExpand"
-                               Padding="0"
-                               Margin="0" />
+       VerticalOptions="End"
+       HorizontalOptions="FillAndExpand"
+       Padding="0"
+       Margin="0" />
     </Grid>
+
 </ContentPage>

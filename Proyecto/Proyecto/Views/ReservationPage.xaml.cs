@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Proyecto.Models;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms;
 
 namespace Proyecto.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReservationPage : ContentPage
     {
-        public ReservationPage()
+        private ParkingSpaceModel _selectedSpace;
+
+        public ReservationPage(ParkingSpaceModel selectedSpace)
         {
             InitializeComponent();
+            _selectedSpace = selectedSpace;
         }
     }
 }
