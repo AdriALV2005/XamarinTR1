@@ -123,3 +123,14 @@ C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\refint\Proyecto.dll
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.pdb
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\ParkingPage.xaml.g.cs
+C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\HistorialPage.xaml.g.cs
+C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\MiEspacioPage.xaml.g.cs
+C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\SoportePage.xaml.g.cs
+C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TarifasPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\HistorialPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\MiEspacioPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\ParkingPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\SoportePage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TarifasPage.xaml.g.cs

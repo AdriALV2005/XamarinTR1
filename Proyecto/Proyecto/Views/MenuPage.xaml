@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.MenuPage"
+             BackgroundColor="#101010">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <!-- Header -->
+            <Label Text="Morning, Alex"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Start"/>
+
+            <!-- Grid Layout for Menu Options -->
+            <Grid Padding="0" ColumnSpacing="10" RowSpacing="10">
+                <!-- Row and Column Definitions -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- AGREGAR Espacio -->
+                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#a9f23b" CornerRadius="20" Padding="15">
+                    <Button Text="Agregar Espacio"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Clicked="OnSpacesPageClicked" />
+                </Frame>
+
+                <!-- Perfil -->
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#7b38f2" CornerRadius="20" Padding="15">
+                    <Button Text="Perfil"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Clicked="OnProfilePageClicked" />
+                </Frame>
+
+                <!-- Tarifas -->
+                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#f2e038" CornerRadius="20" Padding="15">
+                    <Button Text="Ver Tarifas"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Clicked="OnTarifasPageClicked" />
+                </Frame>
+
+
+
+                <!-- sOPORTE -->
+                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#4ac3f2" CornerRadius="20" Padding="15">
+                    <Button Text="Soporte"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Clicked="OnSoportePageClicked" />
+                </Frame>
+
+                <!-- Historial -->
+                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#2f2f2f" CornerRadius="20" Padding="15">
+                    <Button Text="Historial"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Clicked="OnHistorialPageClicked" />
+                </Frame>
+
+
+                <!-- mi espacio -->
+                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#f24a4a" CornerRadius="20" Padding="15">
+                    <Button Text="Mi Espacio"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            Clicked="OnMiEspacioPageClicked" />
+                </Frame>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -12,9 +12,9 @@ embedassembliesintoapk=false
 androidlinkmode=none
 androidlinkskip=
 androidsdkbuildtoolsversion=32.0.0
-androidsdkpath=c:\program files (x86)\android\android-sdk\
+androidsdkpath=d:\android\android-sdk\
 androidndkpath=
-javasdkpath=c:\program files (x86)\android\openjdk\jdk-17.0.8.101-hotspot\
+javasdkpath=d:\android\openjdk\jdk-17.0.8.101-hotspot\
 androidsequencepointsmode=none
 xamarinandroidversion=13.2.2-0
 monosymbolarchive=false
@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638620254612685484
+_nugetassetstimestamp=638623503588586618
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=c:\users\bryan\downloads\xamarin\xamarin\proyecto\proyecto.android\proyecto.android.csproj
+projectfullpath=c:\users\adrim\onedrive\documents\xamarin\proyecto\proyecto.android\proyecto.android.csproj
