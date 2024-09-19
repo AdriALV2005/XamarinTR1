@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj": {}
+    "C:\\Users\\bryan\\OneDrive - SENATI\\Pictures\\Desktop\\XamarinTR1\\Proyecto\\Proyecto\\Proyecto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj": {
+    "C:\\Users\\bryan\\OneDrive - SENATI\\Pictures\\Desktop\\XamarinTR1\\Proyecto\\Proyecto\\Proyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj",
+        "projectUniqueName": "C:\\Users\\bryan\\OneDrive - SENATI\\Pictures\\Desktop\\XamarinTR1\\Proyecto\\Proyecto\\Proyecto.csproj",
         "projectName": "Proyecto",
-        "projectPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\Proyecto.csproj",
-        "packagesPath": "C:\\Users\\adrim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adrim\\OneDrive\\Documents\\Xamarin\\Proyecto\\Proyecto\\obj\\",
+        "projectPath": "C:\\Users\\bryan\\OneDrive - SENATI\\Pictures\\Desktop\\XamarinTR1\\Proyecto\\Proyecto\\Proyecto.csproj",
+        "packagesPath": "C:\\Users\\bryan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bryan\\OneDrive - SENATI\\Pictures\\Desktop\\XamarinTR1\\Proyecto\\Proyecto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Nueva carpeta (2)\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\adrim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

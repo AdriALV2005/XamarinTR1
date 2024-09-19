@@ -6,7 +6,7 @@
              NavigationPage.HasNavigationBar="False">
     <StackLayout Padding="30"
                  VerticalOptions="Center">
-        <Label Text="Iniciar Sesión"
+        <Label Text="Lupe fea nadi le festejo cumpleaños"
                TextColor="Black"
                FontAttributes="Bold"
                FontSize="35"
