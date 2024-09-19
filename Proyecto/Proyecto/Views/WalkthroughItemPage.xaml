@@ -4,7 +4,7 @@
              x:Class="Proyecto.Views.WalkthroughItemPage">
     <ContentView.Content>
         <StackLayout Padding="30"
-                     BackgroundColor="White"
+                     BackgroundColor="#FFEAC5"
                      Spacing="0">
             <!-- Imagen desde recursos -->
             <Frame HasShadow="True"

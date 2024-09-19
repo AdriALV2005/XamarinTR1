@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace Proyecto.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ParkingPage : ContentPage
-    {
-        public ParkingPage()
-        {
-            InitializeComponent();
-        }
-    }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class ParkingPage : ContentPage
+	{
+		public ParkingPage ()
+		{
+			InitializeComponent ();
+		}
+	}
 }

@@ -21,13 +21,25 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
             <!-- Icono de Inicio -->
-            <ImageButton Source="home.png"
+            <ImageButton Source="historial.png"
                          BackgroundColor="Transparent"
                          Grid.Column="0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         Aspect="AspectFit"
+                         Clicked="Historial"
+                         Pressed="OnButtonPressed"
+                         Released="OnButtonReleased" />
+
+            <!-- Icono de Historial -->
+            <ImageButton Source="home.png"
+                         BackgroundColor="Transparent"
+                         Grid.Column="1"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
                          WidthRequest="30"
@@ -36,34 +48,11 @@
                          Clicked="Home"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
-            <!-- Icono de Calendario -->
-            <ImageButton Source="estado.png"
-                         BackgroundColor="Transparent"
-                         Grid.Column="1"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         WidthRequest="30"
-                         HeightRequest="30"
-                         Aspect="AspectFit"
-                         Clicked="Estado"
-                         Pressed="OnButtonPressed"
-                         Released="OnButtonReleased" />
-            <!-- Icono de Historial -->
-            <ImageButton Source="historial.png"
-                         BackgroundColor="Transparent"
-                         Grid.Column="2"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         WidthRequest="30"
-                         Clicked="Historial"
-                         HeightRequest="30"
-                         Aspect="AspectFit"
-                         Pressed="OnButtonPressed"
-                         Released="OnButtonReleased" />
-            <!-- Icono de ConfiguraciÃ³n -->
+
+            <!-- Icono de Configuración -->
             <ImageButton Source="usuario.png"
                          BackgroundColor="Transparent"
-                         Grid.Column="3"
+                         Grid.Column="2"
                          HorizontalOptions="Center"
                          VerticalOptions="Center"
                          WidthRequest="30"
@@ -72,17 +61,6 @@
                          Clicked="Usuario"
                          Pressed="OnButtonPressed"
                          Released="OnButtonReleased" />
-            <ImageButton Source="usuario.png"
-              BackgroundColor="Transparent"
-              Grid.Column="4"
-              HorizontalOptions="Center"
-              VerticalOptions="Center"
-              WidthRequest="30"
-              HeightRequest="30"
-              Aspect="AspectFit"
-              Clicked="Ticket"
-              Pressed="OnButtonPressed"
-              Released="OnButtonReleased" />
         </Grid>
     </Frame>
 </ContentView>
