@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Database.Query;
 using Proyecto.Conexion;
@@ -42,22 +40,18 @@ namespace Proyecto.ViewModels
 
         private async void OnCheckAndNavigate(ParkingSpaceModel parkingSpace)
         {
-            if (parkingSpace.IsOccupied)
+            if (parkingSpace.Estado == "ocupado")
             {
-                // Mostrar pop-up si el espacio está ocupado
                 await Application.Current.MainPage.DisplayAlert("Espacio ocupado", "Este espacio está ocupado.", "OK");
             }
             else
             {
-                // Redirigir a ReservationPage si no está ocupado
                 await Application.Current.MainPage.Navigation.PushAsync(new ReservationPage(parkingSpace));
             }
         }
 
-        // Suscribir a cambios en tiempo real en Firebase
         private void SubscribeToParkingSpaceChanges()
         {
-            // Escuchar los cambios en tiempo real del nodo "parkingSpaces"
             _firebaseClient
                 .Child("parkingSpaces")
                 .AsObservable<ParkingSpaceModel>()
@@ -78,33 +72,27 @@ namespace Proyecto.ViewModels
                 });
         }
 
-        // Actualizar o agregar un espacio de aparcamiento en la colección
         private void UpdateOrAddParkingSpace(ParkingSpaceModel updatedSpace)
         {
             var existingSpace = ParkingSpaces.FirstOrDefault(p => p.SpaceID == updatedSpace.SpaceID);
             if (existingSpace != null)
             {
-                // Si el espacio ya existe, actualiza sus datos
                 existingSpace.SpaceNumber = updatedSpace.SpaceNumber;
-                existingSpace.IsOccupied = updatedSpace.IsOccupied;
+                existingSpace.Estado = updatedSpace.Estado;
             }
             else
             {
-                // Si el espacio no existe, lo agrega
                 ParkingSpaces.Add(updatedSpace);
             }
-            // Forzar la actualización de la interfaz
             Device.BeginInvokeOnMainThread(() => OnPropertyChanged(nameof(ParkingSpaces)));
         }
 
-        // Eliminar un espacio de aparcamiento
         private void RemoveParkingSpace(ParkingSpaceModel spaceToRemove)
         {
             var existingSpace = ParkingSpaces.FirstOrDefault(p => p.SpaceID == spaceToRemove.SpaceID);
             if (existingSpace != null)
             {
                 ParkingSpaces.Remove(existingSpace);
-                // Forzar la actualización de la interfaz
                 Device.BeginInvokeOnMainThread(() => OnPropertyChanged(nameof(ParkingSpaces)));
             }
         }

@@ -1,158 +1,144 @@
-﻿using Proyecto.Views;
-using System;
-using System.ComponentModel;
+﻿using System;
+using System.Timers;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Proyecto.Views
+namespace Proyecto.ViewModels
 {
-    public class ReservationViewModel : INotifyPropertyChanged
+    public class ReservationViewModel : BindableObject
     {
-        // Variables
-        private double _horasReservacion;
-        private string _tipoVehiculoSeleccionado;
-        private double _pagoPorHora;
-        private double _costoVehiculo;
-        private double _totalPagar;
+        private DateTime _horaActual;
+        private DateTime _horaLlegada;
+        private int _tiempoReservacion; // en minutos
+        private decimal _totalPagar;
+        private string _ubicacionEstacionamiento;
+        private Timer _timer;
 
-        // Propiedades
-        public DateTime HoraIngreso { get; set; }
-
-        public DateTime HoraSalida
+        public ReservationViewModel()
         {
-            get => HoraIngreso.AddHours(HorasReservacion);
+            _horaLlegada = DateTime.Now.AddMinutes(30); // Hora inicial de llegada es 30 min después de la hora actual
+            _tiempoReservacion = 30; // Por defecto 30 minutos
+            _ubicacionEstacionamiento = "Bloque A";
+
+            IncrementMinutesCommand = new Command(IncrementMinutes);
+            DecrementMinutesCommand = new Command(DecrementMinutes);
+            PagarCommand = new Command(Pagar);
+
+            // Iniciar el temporizador para actualizar la hora actual en tiempo real
+            _timer = new Timer(1000); // Actualizar cada segundo
+            _timer.Elapsed += (sender, args) =>
+            {
+                HoraActual = DateTime.Now;
+                HoraLlegada = HoraLlegada.AddSeconds(1); // Simular la hora estimada de llegada actualizándose
+            };
+            _timer.Start();
+
+            CalculateTotalPagar();
         }
 
-        public double HorasReservacion
+        public DateTime HoraActual
         {
-            get => _horasReservacion;
+            get => _horaActual;
             set
             {
-                _horasReservacion = value;
-                OnPropertyChanged(nameof(HorasReservacion));
-                OnPropertyChanged(nameof(HoraSalida));
-                CalcularTotal();
+                _horaActual = value;
+                OnPropertyChanged();
             }
         }
 
-        public string TipoVehiculoSeleccionado
+        public DateTime HoraLlegada
         {
-            get => _tipoVehiculoSeleccionado;
+            get => _horaLlegada;
             set
             {
-                _tipoVehiculoSeleccionado = value;
-                OnPropertyChanged(nameof(TipoVehiculoSeleccionado));
-                CalcularTotal();
+                _horaLlegada = value;
+                OnPropertyChanged();
             }
         }
 
-        public double PagoPorHora
+        public int TiempoReservacion
         {
-            get => _pagoPorHora;
+            get => _tiempoReservacion;
             set
             {
-                _pagoPorHora = value;
-                OnPropertyChanged(nameof(PagoPorHora));
+                _tiempoReservacion = value;
+                OnPropertyChanged();
+                CalculateTotalPagar();
             }
         }
 
-        public double CostoVehiculo
+        // Propiedad que formatea el tiempo de reserva para mostrar horas y minutos de manera legible
+        public string TiempoReservacionFormatted
         {
-            get => _costoVehiculo;
-            set
+            get
             {
-                _costoVehiculo = value;
-                OnPropertyChanged(nameof(CostoVehiculo));
+                if (TiempoReservacion >= 60)
+                {
+                    int hours = TiempoReservacion / 60;
+                    int minutes = TiempoReservacion % 60;
+                    return $"{hours} {(hours == 1 ? "hora" : "horas")}{(minutes > 0 ? $" {minutes} minutos" : "")}";
+                }
+                return $"{TiempoReservacion} minutos";
             }
         }
 
-        public double TotalPagar
+        public decimal TotalPagar
         {
             get => _totalPagar;
             set
             {
                 _totalPagar = value;
-                OnPropertyChanged(nameof(TotalPagar));
+                OnPropertyChanged();
             }
         }
 
-        // Comandos
+        public string UbicacionEstacionamiento
+        {
+            get => _ubicacionEstacionamiento;
+            set
+            {
+                _ubicacionEstacionamiento = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand IncrementMinutesCommand { get; }
+        public ICommand DecrementMinutesCommand { get; }
         public ICommand PagarCommand { get; }
-        public ICommand IncrementHoursCommand { get; }
-        public ICommand DecrementHoursCommand { get; }
 
-        // Constructor
-        public ReservationViewModel()
+        private void IncrementMinutes()
         {
-            HoraIngreso = DateTime.Now;
-            HorasReservacion = 1; // Valor inicial para la cantidad de horas
-            TipoVehiculoSeleccionado = "Pequeño"; // Valor predeterminado
-
-            // Inicialización de comandos
-            PagarCommand = new Command(Pagar);
-            IncrementHoursCommand = new Command(IncrementHours);
-            DecrementHoursCommand = new Command(DecrementHours);
-
-            // Inicialización de cálculos
-            CalcularTotal();
+            HoraLlegada = HoraLlegada.AddMinutes(30);
+            TiempoReservacion += 30;
+            OnPropertyChanged(nameof(TiempoReservacionFormatted));
         }
 
-        // Métodos para los botones de incremento y decremento
-        private void IncrementHours()
+        private void DecrementMinutes()
         {
-            if (HorasReservacion < 12) // Máximo de 12 horas
+            if (TiempoReservacion > 30)
             {
-                HorasReservacion++;
+                HoraLlegada = HoraLlegada.AddMinutes(-30);
+                TiempoReservacion -= 30;
+                OnPropertyChanged(nameof(TiempoReservacionFormatted));
             }
         }
 
-        private void DecrementHours()
+        private void CalculateTotalPagar()
         {
-            if (HorasReservacion > 1) // Mínimo de 1 hora
-            {
-                HorasReservacion--;
-            }
+            // Se cobra 5 soles por cada 30 minutos
+            TotalPagar = (TiempoReservacion / 30) * 5;
         }
 
-        // Método para calcular el total a pagar
-        private void CalcularTotal()
+        private void Pagar()
         {
-            PagoPorHora = HorasReservacion * 10.00; // Precio por hora: S/. 10.00
-
-            switch (TipoVehiculoSeleccionado)
-            {
-                case "Pequeño":
-                    CostoVehiculo = 5.00;
-                    break;
-                case "Mediano":
-                    CostoVehiculo = 10.00;
-                    break;
-                case "Grande":
-                    CostoVehiculo = 15.00;
-                    break;
-                default:
-                    CostoVehiculo = 0;
-                    break;
-            }
-
-            TotalPagar = PagoPorHora + CostoVehiculo;
+            // Aquí agregarías la lógica para el pago
+            Application.Current.MainPage.DisplayAlert("Pago", $"Total a Pagar: S/. {TotalPagar:F2}", "OK");
         }
 
-        // Método para redirigir a la página del ticket con los datos calculados
-        private async void Pagar()
+        // Detener el temporizador al finalizar la vista
+        public void StopTimer()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new TicketPage()
-            {
-                BindingContext = new TicketViewModel(HoraIngreso, HoraSalida, PagoPorHora, TipoVehiculoSeleccionado, TotalPagar)
-            });
-        }
-
-        // Implementación de INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            _timer?.Stop();
         }
     }
 }

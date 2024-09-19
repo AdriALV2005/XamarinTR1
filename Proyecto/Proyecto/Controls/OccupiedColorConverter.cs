@@ -7,8 +7,12 @@ namespace Proyecto.Controls
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            bool isOccupied = (bool)value;
-            return isOccupied ? Color.OrangeRed : Color.SkyBlue;
+            string estado = (string)value;
+
+            // Devuelve el color basado en el estado del espacio
+            return estado == "ocupado" ? Color.OrangeRed :
+                   estado == "reservado" ? Color.Orange :
+                   Color.SkyBlue; // Disponible
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
