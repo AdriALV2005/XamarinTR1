@@ -49,22 +49,31 @@ namespace Proyecto.ViewModels
             try
             {
                 var autenticacion = new FirebaseAuthProvider(new FirebaseConfig(DBConn.WepApyAuthentication));
-                var authuser = await autenticacion.SignInWithEmailAndPasswordAsync(objusuario.EmailField.ToString(), objusuario.PasswordField.ToString());
+                var authuser = await autenticacion.SignInWithEmailAndPasswordAsync(objusuario.EmailField, objusuario.PasswordField);
+
+                // Obtener el token de autenticación
                 string obtenertoken = authuser.FirebaseToken;
 
                 var firebaseClient = new FirebaseClient(DBConn.FirebaseUrl);
+
+                // Buscar el usuario en la tabla 'users' usando el email
                 var userQuery = await firebaseClient
                     .Child("users")
                     .OnceAsync<UserModel>();
 
+                // Obtener el usuario correspondiente
                 var user = userQuery
                     .FirstOrDefault(u => u.Object.EmailField == objusuario.EmailField);
 
                 if (user != null)
                 {
                     var userData = user.Object;
+                    userData.UserID = user.Key; // Aquí obtenemos el UserID de la tabla 'users'
+
+                    // Guardar el usuario logueado en el servicio
                     await _userService.SetCurrentUserAsync(userData);
 
+                    // Navegar a la página de perfil o donde sea necesario
                     var profilePage = new ProfilePage();
                     profilePage.BindingContext = new AuthViewModel(Navigation)
                     {
@@ -86,8 +95,9 @@ namespace Proyecto.ViewModels
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Advertencia", "Los datos introducidos son incorrectos o el usuario se encuentra inactivo.", "Aceptar");
-                // You might want to log the exception: Console.WriteLine(ex);
             }
         }
+
+
     }
 }

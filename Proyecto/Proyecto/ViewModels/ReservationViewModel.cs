@@ -1,7 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Proyecto.Models;
+using Proyecto.Conexion;
+using Proyecto.Services;
+using System.Net.Http;
+using System.Text;
 using System.Timers;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using System;
+using Proyecto.Models.Proyecto.Models;
+using Proyecto.Views;
+
+
 
 namespace Proyecto.ViewModels
 {
@@ -14,15 +25,19 @@ namespace Proyecto.ViewModels
         private string _ubicacionEstacionamiento;
         private Timer _timer;
 
+        private readonly IUserService _userService; // Servicio para obtener el usuario actual
+
         public ReservationViewModel()
         {
+            _userService = DependencyService.Get<IUserService>();
+
             _horaLlegada = DateTime.Now.AddMinutes(30); // Hora inicial de llegada es 30 min después de la hora actual
             _tiempoReservacion = 30; // Por defecto 30 minutos
             _ubicacionEstacionamiento = "Bloque A";
 
             IncrementMinutesCommand = new Command(IncrementMinutes);
             DecrementMinutesCommand = new Command(DecrementMinutes);
-            PagarCommand = new Command(Pagar);
+            PagarCommand = new Command(async () => await Pagar());
 
             // Iniciar el temporizador para actualizar la hora actual en tiempo real
             _timer = new Timer(1000); // Actualizar cada segundo
@@ -129,11 +144,74 @@ namespace Proyecto.ViewModels
             TotalPagar = (TiempoReservacion / 30) * 5;
         }
 
-        private void Pagar()
+        private async Task Pagar()
         {
-            // Aquí agregarías la lógica para el pago
-            Application.Current.MainPage.DisplayAlert("Pago", $"Total a Pagar: S/. {TotalPagar:F2}", "OK");
+            // Obtener el usuario actual
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "No se pudo obtener la información del usuario.", "OK");
+                return;
+            }
+
+            // Crear el modelo con los datos necesarios
+            var separacion = new SeparacionModel
+            {
+                Id_Separacion = Guid.NewGuid().ToString(),
+                HoraActual = HoraActual,
+                HoraLlegada = HoraLlegada,
+                TiempoReservacion = TiempoReservacion,
+                TotalPagar = TotalPagar,
+                UbicacionEstacionamiento = UbicacionEstacionamiento,
+                UserId = currentUser.UserID
+            };
+
+            // Convertir el modelo a JSON
+            var json = JsonConvert.SerializeObject(separacion);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                // Enviar los datos a Firebase
+                using (var client = new HttpClient())
+                {
+                    var url = $"{DBConn.FirebaseUrl}/reservaciones.json";
+                    var response = await client.PostAsync(url, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Navegar a la vista TicketSeparacion y pasar todos los datos
+                        await Application.Current.MainPage.Navigation.PushAsync(
+                            new TicketSeparacion(
+                                currentUser.FirstName,
+                                currentUser.LastName,
+                                separacion.HoraActual,
+                                separacion.HoraLlegada,
+                                separacion.TiempoReservacion,
+                                separacion.TotalPagar,
+                                separacion.UbicacionEstacionamiento
+                            )
+                        );
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "No se pudieron guardar los datos en Firebase.", "OK");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
+            }
         }
+
+
+
+
+
+
+
+
 
         // Detener el temporizador al finalizar la vista
         public void StopTimer()

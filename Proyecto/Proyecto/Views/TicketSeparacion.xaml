@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.TicketSeparacion">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+
+            <!-- Mensaje de agradecimiento -->
+            <Label Text="¡Gracias por su reserva!" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center" />
+
+            <!-- Nombre Completo del Usuario -->
+            <Label x:Name="NombreCompletoLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Hora Actual -->
+            <Label x:Name="HoraActualLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Hora Estimada de Llegada -->
+            <Label x:Name="HoraLlegadaLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Tiempo de Reservación -->
+            <Label x:Name="TiempoReservacionLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Total a Pagar -->
+            <Label x:Name="TotalPagarLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Ubicación del Estacionamiento -->
+            <Label x:Name="UbicacionEstacionamientoLabel"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

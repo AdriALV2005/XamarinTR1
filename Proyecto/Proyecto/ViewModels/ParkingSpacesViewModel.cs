@@ -77,7 +77,7 @@ namespace Proyecto.ViewModels
             var existingSpace = ParkingSpaces.FirstOrDefault(p => p.SpaceID == updatedSpace.SpaceID);
             if (existingSpace != null)
             {
-                existingSpace.SpaceNumber = updatedSpace.SpaceNumber;
+                existingSpace.SpaceName = updatedSpace.SpaceName;
                 existingSpace.Estado = updatedSpace.Estado;
             }
             else

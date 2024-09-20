@@ -35,7 +35,7 @@
                             ItemsLayout="VerticalGrid, 2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding SpaceNumber}"
+                        <Button Text="{Binding SpaceName}"
                                 BackgroundColor="{Binding Estado, Converter={StaticResource OccupiedToColorConverter}}"
                                 TextColor="White"
                                 FontSize="12"
