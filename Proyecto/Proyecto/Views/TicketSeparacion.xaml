@@ -16,7 +16,44 @@
                    HorizontalOptions="Center" />
 
             <!-- Hora Actual -->
-       
+            <Label Text="Hora Actual:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding HoraActual}"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Hora Llegada -->
+            <Label Text="Hora Llegada:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding HoraLlegada}"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Tiempo de Reservación -->
+            <Label Text="Tiempo de Reservación:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding TiempoReservacion}"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Total a Pagar -->
+            <Label Text="Total a Pagar:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding TotalPagar}"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- Ubicación Estacionamiento -->
+            <Label Text="Ubicación del Estacionamiento:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding UbicacionEstacionamiento}"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
 
         </StackLayout>
     </ContentPage.Content>

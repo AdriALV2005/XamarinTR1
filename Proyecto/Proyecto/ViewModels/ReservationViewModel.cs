@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System;
 using Proyecto.Models.Proyecto.Models;
 using Proyecto.Views;
+using System.Collections.Generic;
 
 
 
@@ -180,12 +181,21 @@ namespace Proyecto.ViewModels
 
                     if (response.IsSuccessStatusCode)
                     {
-                        // Navegar a la vista TicketSeparacion y pasar todos los datos
+                        // Leer la respuesta y obtener el ID generado por Firebase
+                        var responseData = await response.Content.ReadAsStringAsync();
+
+                        // Deserializar la respuesta como un diccionario
+                        var responseObject = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseData);
+
+                        // Extraer el ID generado por Firebase desde el campo "name"
+                        var firebaseId = responseObject["name"];
+
+                        // Navegar a la vista TicketSeparacion y pasar el ID generado por Firebase
                         await Application.Current.MainPage.Navigation.PushAsync(
                             new TicketSeparacion(
                                 currentUser.FirstName,
-                                currentUser.LastName
-                               
+                                currentUser.LastName,
+                                firebaseId // Pasar el ID generado por Firebase
                             )
                         );
                     }
@@ -200,14 +210,6 @@ namespace Proyecto.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
             }
         }
-
-
-
-
-
-
-
-
 
         // Detener el temporizador al finalizar la vista
         public void StopTimer()
