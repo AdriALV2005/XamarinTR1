@@ -16,29 +16,7 @@
                    HorizontalOptions="Center" />
 
             <!-- Hora Actual -->
-            <Label x:Name="HoraActualLabel"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
-
-            <!-- Hora Estimada de Llegada -->
-            <Label x:Name="HoraLlegadaLabel"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
-
-            <!-- Tiempo de Reservación -->
-            <Label x:Name="TiempoReservacionLabel"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
-
-            <!-- Total a Pagar -->
-            <Label x:Name="TotalPagarLabel"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
-
-            <!-- Ubicación del Estacionamiento -->
-            <Label x:Name="UbicacionEstacionamientoLabel"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
+       
 
         </StackLayout>
     </ContentPage.Content>

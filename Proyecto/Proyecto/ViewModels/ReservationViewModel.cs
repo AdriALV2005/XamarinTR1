@@ -184,12 +184,8 @@ namespace Proyecto.ViewModels
                         await Application.Current.MainPage.Navigation.PushAsync(
                             new TicketSeparacion(
                                 currentUser.FirstName,
-                                currentUser.LastName,
-                                separacion.HoraActual,
-                                separacion.HoraLlegada,
-                                separacion.TiempoReservacion,
-                                separacion.TotalPagar,
-                                separacion.UbicacionEstacionamiento
+                                currentUser.LastName
+                               
                             )
                         );
                     }
