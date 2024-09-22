@@ -99,10 +99,6 @@ C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\MiEspacioPage.xaml.g.cs
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\SoportePage.xaml.g.cs
 C:\Users\bryan\Downloads\Xamarin\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TarifasPage.xaml.g.cs
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.deps.json
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.dll
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\ref\Proyecto.dll
-C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.pdb
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.AssemblyReference.cache
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\App.xaml.g.cs
@@ -125,9 +121,14 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandar
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.AssemblyInfo.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.CoreCompileInputs.cache
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.sourcelink.json
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.deps.json
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\ref\Proyecto.dll
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\bin\Debug\netstandard2.0\Proyecto.pdb
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.Fody.CopyLocal.cache
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\refint\Proyecto.dll
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Proyecto.pdb
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\CustomPopup.xaml.g.cs

@@ -28,6 +28,7 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"PropertyChanged.dll",
 		"Proyecto.dll",
+		"Rg.Plugins.Popup.dll",
 		"SkiaSharp.dll",
 		"SkiaSharp.Extended.dll",
 		"SkiaSharp.Extended.Svg.dll",

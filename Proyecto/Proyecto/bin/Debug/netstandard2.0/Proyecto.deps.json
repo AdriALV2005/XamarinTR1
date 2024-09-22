@@ -14,6 +14,7 @@
           "Google.Cloud.Firestore": "3.8.0",
           "NETStandard.Library": "2.0.3",
           "PropertyChanged.Fody": "4.1.0",
+          "Rg.Plugins.Popup": "2.1.0",
           "SkiaSharp.Extended": "2.0.0",
           "SkiaSharp.Svg": "1.60.0",
           "SkiaSharp.Views.Forms": "2.88.8",
@@ -298,6 +299,17 @@
       "PropertyChanged.Fody/4.1.0": {
         "dependencies": {
           "Fody": "6.6.4"
+        }
+      },
+      "Rg.Plugins.Popup/2.1.0": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2196"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
         }
       },
       "SkiaSharp/2.88.8": {
@@ -770,6 +782,13 @@
       "sha512": "sha512-6v+f9cI8YjnZH2WBHuOqWEAo8DFFNGFIdU8xD3AsL6fhV6Y8oAmVWd7XKk49t8DpeUBwhR/X+97+6Epvek0Y3A==",
       "path": "propertychanged.fody/4.1.0",
       "hashPath": "propertychanged.fody.4.1.0.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-caKjkvimzpUqk4pO/WSFn3uOX43uZNW5rPWCx7eXkOlGG9Br90MTwNVS1nxhtyypB69uUe/0GQPEC3rz+kscbA==",
+      "path": "rg.plugins.popup/2.1.0",
+      "hashPath": "rg.plugins.popup.2.1.0.nupkg.sha512"
     },
     "SkiaSharp/2.88.8": {
       "type": "package",

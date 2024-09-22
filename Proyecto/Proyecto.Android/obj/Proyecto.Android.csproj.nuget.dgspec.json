@@ -67,6 +67,10 @@
               "target": "Package",
               "version": "[4.1.0, )"
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "SkiaSharp.Extended": {
               "target": "Package",
               "version": "[2.0.0, )"
@@ -162,6 +166,10 @@
             "PropertyChanged.Fody": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "SkiaSharp.Extended": {
               "target": "Package",

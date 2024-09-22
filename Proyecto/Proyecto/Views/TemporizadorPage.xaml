@@ -4,6 +4,12 @@
              x:Class="Proyecto.Views.TemporizadorPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+            <Button Text="Mostrar Pop-up"
+        Clicked="OnMostrarPopupClicked"
+        FontSize="Medium"
+        HorizontalOptions="Center"
+        Margin="10"/>
+
 
             <!-- Mostrar el Temporizador Principal -->
             <Label Text="Tiempo de Reservación:"

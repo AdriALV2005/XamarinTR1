@@ -92,7 +92,7 @@ namespace Proyecto.ViewModels
                     await App.Current.MainPage.DisplayAlert("Error", "User data not found.", "OK");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await App.Current.MainPage.DisplayAlert("Advertencia", "Los datos introducidos son incorrectos o el usuario se encuentra inactivo.", "Aceptar");
             }
