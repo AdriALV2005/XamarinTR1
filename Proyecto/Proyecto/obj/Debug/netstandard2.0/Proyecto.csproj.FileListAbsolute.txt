@@ -117,6 +117,7 @@ C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandar
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\ReservationPage.xaml.g.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\ResetPasswordPage.xaml.g.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\SpacesPage.xaml.g.cs
+C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TemporizadorPage.xaml.g.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TicketPage.xaml.g.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\TicketSeparacion.xaml.g.cs
 C:\Users\adrim\OneDrive\Documents\Xamarin\Proyecto\Proyecto\obj\Debug\netstandard2.0\Views\WalkthroughItemPage.xaml.g.cs

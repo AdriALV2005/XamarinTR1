@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Views.TemporizadorPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+
+            <!-- Mostrar el Temporizador Principal -->
+            <Label Text="Tiempo de Reservación:"
+                   FontSize="Medium" 
+                   HorizontalOptions="Center" />
+
+            <!-- El temporizador cambiará de color cuando llegue al límite -->
+            <Label Text="{Binding TiempoTranscurrido, StringFormat='{0:hh\\:mm\\:ss}'}"
+                   FontSize="Large" 
+                   TextColor="{Binding ColorTemporizador}"
+                   HorizontalOptions="Center" />
+
+            <!-- Botón "Ya Llegué" para iniciar un nuevo temporizador, se desactivará si se acaba el tiempo -->
+            <Button Text="Ya llegué"
+                    Command="{Binding YaLlegueCommand}"
+                    IsEnabled="{Binding YaLlegueButtonEnabled}"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Margin="10"/>
+
+            <!-- Mostrar el nuevo temporizador si se presionó "Ya llegué" -->
+            <Label Text="Nuevo Temporizador:"
+                   FontSize="Medium"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding NuevoTiempoTranscurrido, StringFormat='{0:hh\\:mm\\:ss}'}"
+                   FontSize="Large" 
+                   HorizontalOptions="Center" />
+
+            <!-- Botón "Regresar" aparecerá si se acaba el tiempo -->
+            <Button Text="Regresar :C"
+                    Command="{Binding RegresarCommand}"
+                    FontSize="Medium"
+                    IsVisible="{Binding MostrarBotonRegresar}"
+                    HorizontalOptions="Center"
+                    Margin="10"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

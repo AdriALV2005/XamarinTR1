@@ -25,6 +25,7 @@ namespace Proyecto.ViewModels
         private decimal _totalPagar;
         private string _ubicacionEstacionamiento;
         private Timer _timer;
+        private int _spaceID; // Agregar esta línea para definir _spaceID
 
         private readonly IUserService _userService; // Servicio para obtener el usuario actual
         private ParkingSpaceModel _selectedSpace; // Objeto ParkingSpaceModel seleccionado
@@ -32,6 +33,7 @@ namespace Proyecto.ViewModels
         public ReservationViewModel(ParkingSpaceModel selectedSpace)
         {
             _selectedSpace = selectedSpace;
+            _spaceID = selectedSpace.SpaceID; // Asigna el ID del espacio
             _userService = DependencyService.Get<IUserService>(); // Inicializar _userService
 
             if (_userService == null)
@@ -210,13 +212,15 @@ namespace Proyecto.ViewModels
                         if (updateResponse.IsSuccessStatusCode)
                         {
                             // Navegar a la vista TicketSeparacion y pasar el ID generado por Firebase
-                            await Application.Current.MainPage.Navigation.PushAsync(
-                                new TicketSeparacion(
-                                    currentUser.FirstName,
-                                    currentUser.LastName,
-                                    firebaseId // Pasar el ID generado por Firebase
-                                )
-                            );
+                            //await Application.Current.MainPage.Navigation.PushAsync(
+                            //    new TicketSeparacion(
+                            //        currentUser.FirstName,
+                            //        currentUser.LastName,
+                            //        firebaseId // Pasar el ID generado por Firebase
+                            //    )
+                            //);
+                            await Application.Current.MainPage.Navigation.PushAsync(new TemporizadorPage(firebaseId, _spaceID));
+
                         }
                         else
                         {
