@@ -192,8 +192,10 @@ namespace Proyecto.ViewModels
                         var firebaseId = responseObject["name"];
 
                         // Actualizar el estado del espacio a "reservado"
-                        _selectedSpace.Estado = "reservado";
-                        var updateJson = JsonConvert.SerializeObject(_selectedSpace);
+                        _selectedSpace.Estado = "reservado"; // Cambiar estado a "reservado"
+
+                        // Asegúrate de que la propiedad 'SpaceID' sea de tipo string
+                        var updateJson = JsonConvert.SerializeObject(new { estado = _selectedSpace.Estado }); // Enviar solo el campo 'estado'
                         var updateContent = new StringContent(updateJson, Encoding.UTF8, "application/json");
 
                         // Crear una solicitud PATCH
@@ -232,6 +234,7 @@ namespace Proyecto.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
             }
         }
+
 
         // Detener el temporizador al finalizar la vista
         public void StopTimer()
