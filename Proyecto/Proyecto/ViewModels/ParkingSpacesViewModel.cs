@@ -43,7 +43,8 @@ namespace Proyecto.ViewModels
             if (parkingSpace.Estado == "ocupado")
             {
                 await Application.Current.MainPage.DisplayAlert("Espacio ocupado", "Este espacio está ocupado.", "OK");
-            }else if(parkingSpace.Estado == "reservado")
+            }
+            else if (parkingSpace.Estado == "reservado")
             {
                 await Application.Current.MainPage.DisplayAlert("Espacio reservado", "Este espacio está reservado.", "OK");
             }
