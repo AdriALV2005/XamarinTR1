@@ -1,21 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
              x:Class="Proyecto.Views.MenuPage"
+             NavigationPage.HasNavigationBar="False"
              BackgroundColor="#101010">
-
+    <!-- Definir el BindingContext -->
     <ContentPage.Content>
-        <StackLayout Padding="20">
-
+        <StackLayout Padding="20"
+                     Margin="0,50,0,0">
             <!-- Header -->
-            <Label Text="Morning, Alex"
-                   FontSize="24"
+            <Label Text="Hola"
+                   FontSize="25"
+                   TextColor="#ff9810"
+                   HorizontalOptions="Start"
+                   Margin="10,0,0,0" />
+            <Label Text="Martínez, Alex."
+                   FontSize="30"
                    FontAttributes="Bold"
                    TextColor="White"
-                   HorizontalOptions="Start"/>
-
+                   HorizontalOptions="Start"
+                   Margin="10,0,0,0" />
             <!-- Grid Layout for Menu Options -->
-            <Grid Padding="0" ColumnSpacing="10" RowSpacing="10">
+            <Grid Padding="0"
+                  ColumnSpacing="10"
+                  RowSpacing="10">
                 <!-- Row and Column Definitions -->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -26,71 +34,288 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-
                 <!-- AGREGAR Espacio -->
-                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#a9f23b" CornerRadius="20" Padding="15">
-                    <Button Text="Agregar Espacio"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="Black"
-                            Clicked="OnSpacesPageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="50"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="0"
+                       Grid.Column="0">
+                    <Grid>
+                        <!-- Texto de la izquierda -->
+                        <Label Text="Separar Espacio"
+                               FontSize="17"
+                               Margin="20,0,0,0"
+                               TextColor="White"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center" />
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="50"
+                               WidthRequest="120"
+                               CornerRadius="20"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="Ver"
+                                    FontSize="15"
+                                    CornerRadius="20"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    BorderWidth="1"
+                                    Clicked="SepararEspacioClicked"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
-
                 <!-- Perfil -->
-                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#7b38f2" CornerRadius="20" Padding="15">
-                    <Button Text="Perfil"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="White"
-                            Clicked="OnProfilePageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="50"
+                       Grid.ColumnSpan="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="1"
+                       Grid.Column="0">
+                    <Grid>
+                        <!-- Texto de la izquierda -->
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Perfil"
+                                   FontSize="15"
+                                   TextColor="white"
+                                   HorizontalOptions="Start"
+                                   Margin="5,13,0,0" />
+                        </StackLayout>
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               CornerRadius="25"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="->"
+                                    FontSize="18"
+                                    CornerRadius="25"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    Clicked="PerfilClicked"
+                                    BorderWidth="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
-
                 <!-- Tarifas -->
-                <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#f2e038" CornerRadius="20" Padding="15">
-                    <Button Text="Ver Tarifas"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="Black"
-                            Clicked="OnTarifasPageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="50"
+                       Grid.ColumnSpan="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="1"
+                       Grid.Column="1">
+                    <Grid>
+                        <!-- Texto de la izquierda -->
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Tarifas"
+                                   FontSize="15"
+                                   TextColor="white"
+                                   HorizontalOptions="Start"
+                                   Margin="5,13,0,0" />
+                            <!-- Ajusta el margen inferior -->
+                            <!-- Ajusta el margen según sea necesario -->
+                        </StackLayout>
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               CornerRadius="25"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="->"
+                                    FontSize="18"
+                                    CornerRadius="25"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    Clicked="TarifasClicked"
+                                    BorderWidth="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
-
-
-
                 <!-- sOPORTE -->
-                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#4ac3f2" CornerRadius="20" Padding="15">
-                    <Button Text="Soporte"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="White"
-                            Clicked="OnSoportePageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="50"
+                       Grid.ColumnSpan="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="2"
+                       Grid.Column="0">
+                    <Grid>
+                        <!-- Texto de la izquierda -->
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Soporte"
+                                   FontSize="15"
+                                   TextColor="white"
+                                   HorizontalOptions="Start"
+                                   Margin="5,13,0,0" />
+                            <!-- Ajusta el margen inferior -->
+                            <!-- Ajusta el margen según sea necesario -->
+                        </StackLayout>
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               CornerRadius="25"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="->"
+                                    FontSize="18"
+                                    CornerRadius="25"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    Clicked="SoporteClicked"
+                                    BorderWidth="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
-
                 <!-- Historial -->
-                <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="#2f2f2f" CornerRadius="20" Padding="15">
-                    <Button Text="Historial"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="White"
-                            Clicked="OnHistorialPageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="50"
+                       Grid.ColumnSpan="1"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="2"
+                       Grid.Column="1">
+                    <Grid>
+                        <!-- Texto de la izquierda -->
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Historial"
+                                   FontSize="15"
+                                   TextColor="White"
+                                   HorizontalOptions="Start"
+                                   Margin="5,13,0,0" />
+                            <!-- Ajusta el margen inferior -->
+                            <!-- Ajusta el margen según sea necesario -->
+                        </StackLayout>
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               CornerRadius="25"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="->"
+                                    FontSize="18"
+                                    CornerRadius="25"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    BorderWidth="1"
+                                    Clicked="HistorialClicked"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
-
-
                 <!-- mi espacio -->
-                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#f24a4a" CornerRadius="20" Padding="15">
-                    <Button Text="Mi Espacio"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            BackgroundColor="Transparent"
-                            TextColor="White"
-                            Clicked="OnMiEspacioPageClicked" />
+                <Frame BorderColor="#ff9810"
+                       Margin="10,30,10,0"
+                       Padding="10"
+                       CornerRadius="40"
+                       BackgroundColor="#191919"
+                       HasShadow="False"
+                       HeightRequest="65"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       Grid.Row="3"
+                       Grid.Column="0">
+                    <Grid>
+                        <Image Source="https://www.drivvo.com/assets/img/car-2d66e248.webp"
+                               WidthRequest="45"
+                               Margin="40,-15,0,-60"
+                               Rotation="270"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Start" />
+                        <!-- Texto de la izquierda -->
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Mi Espacio"
+                                   FontSize="16"
+                                   TextColor="#e7e7e7"
+                                   HorizontalOptions="Center"
+                                   Margin="35,-4,0,0" />
+                            <!-- Ajusta el margen inferior -->
+                            <Label Text="Tu Vehiculo"
+                                   FontSize="12"
+                                   TextColor="#ff9810"
+                                   HorizontalOptions="Center"
+                                   Margin="5,9,0,0" />
+                            <Label Text="Porche 375"
+                                   FontSize="16"
+                                   TextColor="#e7e7e7"
+                                   HorizontalOptions="Center"
+                                   Margin="25,-7,0,0" />
+                            <!-- Ajusta el margen según sea necesario -->
+                        </StackLayout>
+                        <!-- Flecha de la derecha -->
+                        <Frame HorizontalOptions="End"
+                               HeightRequest="75"
+                               WidthRequest="75"
+                               CornerRadius="50"
+                               BorderColor="#ff9810"
+                               BackgroundColor="#191919"
+                               Padding="0">
+                            <Button Text="Ver"
+                                    CornerRadius="50"
+                                    FontSize="12"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#ff9810"
+                                    BorderColor="#ff9810"
+                                    BorderWidth="1"
+                                    Clicked="MiEspacioClicked"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand" />
+                        </Frame>
+                    </Grid>
                 </Frame>
             </Grid>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,9 +5,6 @@
              NavigationPage.HasNavigationBar="False"
              Title="Reservar Parking">
 
-    <ContentPage.BindingContext>
-        <loca1:ReservationViewModel/>
-    </ContentPage.BindingContext>
 
     <Grid BackgroundColor="White">
 

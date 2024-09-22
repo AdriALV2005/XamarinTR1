@@ -9,9 +9,9 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System;
-using Proyecto.Models.Proyecto.Models;
 using Proyecto.Views;
 using System.Collections.Generic;
+
 
 
 
@@ -27,25 +27,30 @@ namespace Proyecto.ViewModels
         private Timer _timer;
 
         private readonly IUserService _userService; // Servicio para obtener el usuario actual
+        private ParkingSpaceModel _selectedSpace; // Objeto ParkingSpaceModel seleccionado
 
-        public ReservationViewModel()
+        public ReservationViewModel(ParkingSpaceModel selectedSpace)
         {
-            _userService = DependencyService.Get<IUserService>();
+            _selectedSpace = selectedSpace;
+            _userService = DependencyService.Get<IUserService>(); // Inicializar _userService
 
-            _horaLlegada = DateTime.Now.AddMinutes(30); // Hora inicial de llegada es 30 min después de la hora actual
-            _tiempoReservacion = 30; // Por defecto 30 minutos
-            _ubicacionEstacionamiento = "Bloque A";
+            if (_userService == null)
+            {
+                throw new NullReferenceException("IUserService no se ha registrado correctamente en DependencyService.");
+            }
+
+            _horaLlegada = DateTime.Now.AddMinutes(30);
+            _tiempoReservacion = 30;
+            _ubicacionEstacionamiento = selectedSpace.SpaceName;
 
             IncrementMinutesCommand = new Command(IncrementMinutes);
             DecrementMinutesCommand = new Command(DecrementMinutes);
             PagarCommand = new Command(async () => await Pagar());
 
-            // Iniciar el temporizador para actualizar la hora actual en tiempo real
-            _timer = new Timer(1000); // Actualizar cada segundo
+            _timer = new Timer(1000);
             _timer.Elapsed += (sender, args) =>
             {
                 HoraActual = DateTime.Now;
-                HoraLlegada = HoraLlegada.AddSeconds(1); // Simular la hora estimada de llegada actualizándose
             };
             _timer.Start();
 
@@ -163,7 +168,7 @@ namespace Proyecto.ViewModels
                 HoraLlegada = HoraLlegada,
                 TiempoReservacion = TiempoReservacion,
                 TotalPagar = TotalPagar,
-                UbicacionEstacionamiento = UbicacionEstacionamiento,
+                UbicacionEstacionamiento = _ubicacionEstacionamiento,
                 UserId = currentUser.UserID
             };
 
@@ -183,21 +188,38 @@ namespace Proyecto.ViewModels
                     {
                         // Leer la respuesta y obtener el ID generado por Firebase
                         var responseData = await response.Content.ReadAsStringAsync();
-
-                        // Deserializar la respuesta como un diccionario
                         var responseObject = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseData);
-
-                        // Extraer el ID generado por Firebase desde el campo "name"
                         var firebaseId = responseObject["name"];
 
-                        // Navegar a la vista TicketSeparacion y pasar el ID generado por Firebase
-                        await Application.Current.MainPage.Navigation.PushAsync(
-                            new TicketSeparacion(
-                                currentUser.FirstName,
-                                currentUser.LastName,
-                                firebaseId // Pasar el ID generado por Firebase
-                            )
-                        );
+                        // Actualizar el estado del espacio a "reservado"
+                        _selectedSpace.Estado = "reservado";
+                        var updateJson = JsonConvert.SerializeObject(_selectedSpace);
+                        var updateContent = new StringContent(updateJson, Encoding.UTF8, "application/json");
+
+                        // Crear una solicitud PATCH
+                        var patchRequest = new HttpRequestMessage(new HttpMethod("PATCH"), $"{DBConn.FirebaseUrl}/parkingSpaces/{_selectedSpace.SpaceID}.json")
+                        {
+                            Content = updateContent
+                        };
+
+                        // Enviar la solicitud PATCH
+                        var updateResponse = await client.SendAsync(patchRequest);
+
+                        if (updateResponse.IsSuccessStatusCode)
+                        {
+                            // Navegar a la vista TicketSeparacion y pasar el ID generado por Firebase
+                            await Application.Current.MainPage.Navigation.PushAsync(
+                                new TicketSeparacion(
+                                    currentUser.FirstName,
+                                    currentUser.LastName,
+                                    firebaseId // Pasar el ID generado por Firebase
+                                )
+                            );
+                        }
+                        else
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Error", "No se pudo actualizar el estado del espacio.", "OK");
+                        }
                     }
                     else
                     {

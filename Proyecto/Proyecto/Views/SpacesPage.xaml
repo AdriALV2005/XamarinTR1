@@ -49,12 +49,5 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>
-
-        <!-- Barra de navegación personalizada -->
-        <controls:CustomNavbar Grid.Row="1"
-                               VerticalOptions="End"
-                               HorizontalOptions="FillAndExpand"
-                               Padding="0"
-                               Margin="0" />
     </Grid>
 </ContentPage>

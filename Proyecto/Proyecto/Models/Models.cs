@@ -20,8 +20,7 @@ namespace Proyecto.Models
         }
     }
 
-    namespace Proyecto.Models
-    {
+  
         public class SeparacionModel
         {
             public string Id_Separacion { get; set; }
@@ -31,7 +30,7 @@ namespace Proyecto.Models
             public decimal TotalPagar { get; set; }
             public string UbicacionEstacionamiento { get; set; }
             public string UserId { get; set; } // Nueva propiedad para el ID del usuario
-        }
+       
     }
 
 

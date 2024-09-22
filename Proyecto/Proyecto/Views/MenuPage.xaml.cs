@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Proyecto.ViewModels;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,36 +11,43 @@ namespace Proyecto.Views
         public MenuPage()
         {
             InitializeComponent();
+           
         }
 
-        private async void OnSpacesPageClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SpacesPage());
-        }
 
-        private async void OnProfilePageClicked(object sender, EventArgs e)
+
+
+
+
+        private async void PerfilClicked(object sender, EventArgs e)
         {
+           
             await Navigation.PushAsync(new ProfilePage());
         }
-
-        private async void OnTarifasPageClicked(object sender, EventArgs e)
+        private async void TarifasClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TarifasPage());
+          
+            await DisplayAlert("Información", "No está disponible", "OK");
         }
-
-        private async void OnSoportePageClicked(object sender, EventArgs e)
+        private async void SepararEspacioClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SoportePage());
+       
+            await Navigation.PushAsync(new SpacesPage());
         }
-
-        private async void OnHistorialPageClicked(object sender, EventArgs e)
+        private async void SoporteClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HistorialPage());
+            
+            await DisplayAlert("Información", "No está disponible", "OK");
         }
-
-        private async void OnMiEspacioPageClicked(object sender, EventArgs e)
+        private async void MiEspacioClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MiEspacioPage());
+     
+            await DisplayAlert("Información", "No está disponible", "OK");
+        }
+        private async void HistorialClicked(object sender, EventArgs e)
+        {
+            
+            await DisplayAlert("Información", "No está disponible", "OK");
         }
     }
 }

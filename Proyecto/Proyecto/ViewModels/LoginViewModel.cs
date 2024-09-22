@@ -74,7 +74,7 @@ namespace Proyecto.ViewModels
                     await _userService.SetCurrentUserAsync(userData);
 
                     // Navegar a la página de perfil o donde sea necesario
-                    var profilePage = new ProfilePage();
+                    var profilePage = new MenuPage();
                     profilePage.BindingContext = new AuthViewModel(Navigation)
                     {
                         FirstName = userData.FirstName,

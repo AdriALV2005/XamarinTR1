@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:Proyecto.Controls"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proyecto.Views.ProfilePage"
              BackgroundColor="#f7f9fc"
@@ -12,15 +11,15 @@
                                   Tapped="OnChangePasswordTapped" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <!-- Usar Grid para superponer el CustomNavbar sobre el contenido -->
+
+    <!-- Usar Grid para organizar el contenido -->
     <Grid>
-        <!-- Definir dos filas en la cuadrícula -->
+        <!-- Definir una fila en la cuadrícula -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
             <!-- Contenido principal -->
-            <RowDefinition Height="80" />
-            <!-- Navbar -->
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <!-- Contenido principal -->
         <ScrollView Grid.Row="0"
                     Padding="0"
@@ -48,7 +47,6 @@
                                WidthRequest="160"
                                HeightRequest="160" />
                     </Frame>
-                  
                 </AbsoluteLayout>
                 <!-- Nombre y Apellido -->
                 <Label Text="{Binding FullName}"
@@ -104,104 +102,8 @@
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>
-                <Frame CornerRadius="15"
-                       Padding="15"
-                       BackgroundColor="White"
-                       Margin="0,0,0,20"
-                       HasShadow="True">
-                    <StackLayout>
-                        <Label Text="Historial"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               TextColor="#333" />
-                        <StackLayout>
-                            <Frame Padding="10"
-                                   Margin="0,5,0,5"
-                                   BackgroundColor="#e9ecef"
-                                   HasShadow="True"
-                                   CornerRadius="10">
-                                <StackLayout>
-                                    <Label Text="Compra de tickets"
-                                           FontSize="16"
-                                           FontAttributes="Bold"
-                                           TextColor="#333" />
-                                    <Label Text="12/01/2024"
-                                           FontSize="14"
-                                           TextColor="#777" />
-                                </StackLayout>
-                            </Frame>
-                            <Frame Padding="10"
-                                   Margin="0,5,0,5"
-                                   BackgroundColor="#e9ecef"
-                                   HasShadow="True"
-                                   CornerRadius="10">
-                                <StackLayout>
-                                    <Label Text="Reserva de espacio"
-                                           FontSize="16"
-                                           FontAttributes="Bold"
-                                           TextColor="#333" />
-                                    <Label Text="05/01/2024"
-                                           FontSize="14"
-                                           TextColor="#777" />
-                                </StackLayout>
-                            </Frame>
-                            <Frame Padding="10"
-                                   Margin="0,5,0,5"
-                                   BackgroundColor="#e9ecef"
-                                   HasShadow="True"
-                                   CornerRadius="10">
-                                <StackLayout>
-                                    <Label Text="Pago de mensualidad"
-                                           FontSize="16"
-                                           FontAttributes="Bold"
-                                           TextColor="#333" />
-                                    <Label Text="15/12/2023"
-                                           FontSize="14"
-                                           TextColor="#777" />
-                                </StackLayout>
-                            </Frame>
-                            <Frame Padding="10"
-                                   Margin="0,5,0,5"
-                                   BackgroundColor="#e9ecef"
-                                   HasShadow="True"
-                                   CornerRadius="10">
-                                <StackLayout>
-                                    <Label Text="Compra de accesorios"
-                                           FontSize="16"
-                                           FontAttributes="Bold"
-                                           TextColor="#333" />
-                                    <Label Text="22/11/2023"
-                                           FontSize="14"
-                                           TextColor="#777" />
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <!-- Estadísticas de Uso -->
-                <Frame CornerRadius="15"
-                       Padding="15"
-                       BackgroundColor="White"
-                       Margin="0,0,0,20"
-                       HasShadow="True">
-                    <StackLayout>
-                        <Label Text="Estadísticas de Uso"
-                               FontSize="20"
-                               FontAttributes="Bold"
-                               TextColor="#333" />
-                        <StackLayout>
-                            <Label Text="Total de Reservas: 45"
-                                   FontSize="16"
-                                   TextColor="#555"
-                                   Margin="0,5" />
-                            <Label Text="Espacios Usados: 30"
-                                   FontSize="16"
-                                   TextColor="#555"
-                                   Margin="0,5" />
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <!-- Botón de Cerrar Sesión -->
+               
+
                 <Button Text="Cerrar Sesión"
         Command="{Binding LogoutCommand}"
         BackgroundColor="Red"
@@ -212,11 +114,5 @@
         HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </ScrollView>
-        <!-- Navbar en la parte inferior -->
-        <controls:CustomNavbar Grid.Row="1"
-                               VerticalOptions="End"
-                               HorizontalOptions="FillAndExpand"
-                               Padding="0"
-                               Margin="0" />
     </Grid>
 </ContentPage>
