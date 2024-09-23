@@ -1,50 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proyecto.Views.TemporizadorPage">
+             x:Class="Proyecto.Views.TemporizadorPage"
+             BackgroundColor="#f0f0f0">
+
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand" 
+                     Padding="20" 
+                     Spacing="20">
+
+            <!-- Botón para mostrar el Pop-up -->
             <Button Text="Mostrar Pop-up"
-        Clicked="OnMostrarPopupClicked"
-        FontSize="Medium"
-        HorizontalOptions="Center"
-        Margin="10"/>
+                    Clicked="OnMostrarPopupClicked"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="#ff9810"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,10" />
 
-
-            <!-- Mostrar el Temporizador Principal -->
+            <!-- Título del Temporizador Principal -->
             <Label Text="Tiempo de Reservación:"
-                   FontSize="Medium" 
-                   HorizontalOptions="Center" />
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,5" />
 
             <!-- El temporizador cambiará de color cuando llegue al límite -->
             <Label Text="{Binding TiempoTranscurrido, StringFormat='{0:hh\\:mm\\:ss}'}"
-                   FontSize="Large" 
+                   FontSize="32"
                    TextColor="{Binding ColorTemporizador}"
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   Margin="0,5,0,10" />
 
-            <!-- Botón "Ya Llegué" para iniciar un nuevo temporizador, se desactivará si se acaba el tiempo -->
+            <!-- Botón "Ya llegué" para iniciar un nuevo temporizador -->
             <Button Text="Ya llegué"
                     Command="{Binding YaLlegueCommand}"
                     IsEnabled="{Binding YaLlegueButtonEnabled}"
                     FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="#28a745"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    HeightRequest="50"
                     HorizontalOptions="Center"
-                    Margin="10"/>
+                    Margin="0,10,0,10" />
+
+            <!-- Título del Nuevo Temporizador -->
+            <Label Text="Nuevo Temporizador:"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   HorizontalOptions="Center"
+                   IsVisible="{Binding YaLlegueButtonEnabled}" />
 
             <!-- Mostrar el nuevo temporizador si se presionó "Ya llegué" -->
-            <Label Text="Nuevo Temporizador:"
-                   FontSize="Medium"
-                   HorizontalOptions="Center" />
             <Label Text="{Binding NuevoTiempoTranscurrido, StringFormat='{0:hh\\:mm\\:ss}'}"
-                   FontSize="Large" 
-                   HorizontalOptions="Center" />
+                   FontSize="32"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="#666"
+                   IsVisible="{Binding YaLlegueButtonEnabled}" />
 
             <!-- Botón "Regresar" aparecerá si se acaba el tiempo -->
             <Button Text="Regresar :C"
                     Command="{Binding RegresarCommand}"
                     FontSize="Medium"
-                    IsVisible="{Binding MostrarBotonRegresar}"
+                    TextColor="White"
+                    BackgroundColor="#dc3545"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    HeightRequest="50"
                     HorizontalOptions="Center"
-                    Margin="10"/>
+                    IsVisible="{Binding MostrarBotonRegresar}"
+                    Margin="10" />
 
         </StackLayout>
     </ContentPage.Content>

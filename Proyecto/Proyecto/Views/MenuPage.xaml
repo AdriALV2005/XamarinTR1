@@ -1,25 +1,33 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
+             xmlns:services="clr-namespace:Proyecto.Services"
              x:Class="Proyecto.Views.MenuPage"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#101010">
-    <!-- Definir el BindingContext -->
+
+    <!-- BindingContext del servicio de usuario -->
+    <ContentPage.BindingContext>
+        <services:UserService />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout Padding="20"
-                     Margin="0,50,0,0">
+        <StackLayout Padding="20" Margin="0,50,0,0">
             <!-- Header -->
             <Label Text="Hola"
                    FontSize="25"
                    TextColor="#ff9810"
                    HorizontalOptions="Start"
                    Margin="10,0,0,0" />
-            <Label Text="Martínez, Alex."
-                   FontSize="30"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   HorizontalOptions="Start"
-                   Margin="10,0,0,0" />
+
+            <!-- Usar MultiBinding para concatenar FirstName y LastName -->
+            <Label x:Name="nameLabel"
+       FontSize="30"
+       FontAttributes="Bold"
+       TextColor="White"
+       HorizontalOptions="Start"
+       Margin="10,0,0,0" />
+
+
             <!-- Grid Layout for Menu Options -->
             <Grid Padding="0"
                   ColumnSpacing="10"

@@ -13,7 +13,7 @@ namespace Proyecto
 
             DependencyService.Register<IUserService, UserService>();
 
-            MainPage = new NavigationPage(new LoginPage()); 
+            MainPage = new NavigationPage(new OnboardingPage()); 
         }
 
         protected override void OnStart()

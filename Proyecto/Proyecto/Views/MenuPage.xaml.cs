@@ -1,5 +1,7 @@
-﻿using Proyecto.ViewModels;
+﻿using Proyecto.Services;
+using Proyecto.ViewModels;
 using System;
+using System.Xml;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +13,17 @@ namespace Proyecto.Views
         public MenuPage()
         {
             InitializeComponent();
-           
+            var userService = DependencyService.Get<IUserService>();
+
+            // Concatenar FirstName y LastName manualmente
+            string fullName = $"{userService.CurrentUser.FirstName} {userService.CurrentUser.LastName}";
+
+            // Establecer el BindingContext de la página
+            BindingContext = userService;
+
+            // Asignar el nombre completo al Label
+            nameLabel.Text = fullName;
+
         }
 
 

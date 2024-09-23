@@ -15,7 +15,7 @@ namespace Proyecto.Controls
                 return "carro.webp"; // Devuelve la imagen del carro
             }
 
-            return Color.LightGreen; // Disponible
+            return Color.FromHex("#FF5722"); // Reemplaza por el código hexadecimal correcto
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

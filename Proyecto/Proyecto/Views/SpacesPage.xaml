@@ -5,45 +5,49 @@
              xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
              x:Class="Proyecto.Views.SpacesPage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="White">
-
-    <!-- Definir recursos y conversores -->
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <!-- Conversor de ocupación a color o imagen -->
-            <local:OccupiedColorConverter x:Key="OccupiedToColorConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             BackgroundColor="#f8f8f8">
 
     <!-- Binding del ViewModel -->
     <ContentPage.BindingContext>
         <viewModels:ParkingSpacesViewModel />
     </ContentPage.BindingContext>
 
-    <Grid>
-        <StackLayout>
-            <!-- Título -->
-            <Label Text="Aparcamiento 😍"
-                   FontSize="35"
-                   HorizontalOptions="Center"
-                   Margin="0,30"
-                   FontAttributes="Bold"
-                   TextColor="Black" />
+    <StackLayout Spacing="20" Padding="20" BackgroundColor="Transparent">
+        <!-- Título -->
+        <Label Text="Aparcamiento 😍"
+               FontSize="30"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="#333333" />
 
-            <!-- CollectionView con los espacios de aparcamiento -->
-            <CollectionView ItemsSource="{Binding ParkingSpaces}"
-                            Margin="20,0"
-                            ItemsLayout="VerticalGrid, 2">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <!-- Contenedor para mostrar imagen o botón -->
-                        <Grid>
+        <!-- Subtitle -->
+        <Label Text="Selecciona tu espacio disponible"
+               FontSize="16"
+               HorizontalOptions="Center"
+               TextColor="#999999"
+               Margin="0,0,0,10"/>
+
+        <!-- CollectionView con los espacios de aparcamiento -->
+        <CollectionView ItemsSource="{Binding ParkingSpaces}"
+                        Margin="0"
+                        ItemsLayout="VerticalGrid, 2"
+                        BackgroundColor="Transparent">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- Contenedor minimalista -->
+                    <Frame BackgroundColor="White"
+                           CornerRadius="20"
+                           HasShadow="False"
+                           Padding="15"
+                           Margin="10,5"
+                           BorderColor="#dddddd">
+                        <StackLayout>
                             <!-- Imagen del carro si el espacio está ocupado o reservado -->
                             <Image Source="carro.webp"
                                    WidthRequest="50"
                                    HeightRequest="50"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center">
+                                   IsVisible="{Binding Estado, Converter={StaticResource OccupiedColorConverter}}">
                                 <Image.Triggers>
                                     <DataTrigger TargetType="Image"
                                                  Binding="{Binding Estado}"
@@ -65,15 +69,16 @@
 
                             <!-- Botón si el espacio está disponible -->
                             <Button Text="{Binding SpaceName}"
-                                    BackgroundColor="{Binding Estado, Converter={StaticResource OccupiedToColorConverter}}"
+                                    BackgroundColor="{Binding Estado, Converter={StaticResource OccupiedColorConverter}}"
                                     TextColor="White"
-                                    FontSize="12"
+                                    FontSize="14"
                                     FontAttributes="Bold"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ParkingSpacesViewModel}}, Path=CheckAndNavigateCommand}"
                                     CommandParameter="{Binding .}"
-                                    Margin="10,10"
-                                    CornerRadius="12"
-                                    HeightRequest="70"
+                                    CornerRadius="10"
+                                    HeightRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"
                                     IsVisible="True">
                                 <Button.Triggers>
                                     <DataTrigger TargetType="Button"
@@ -93,10 +98,10 @@
                                     </DataTrigger>
                                 </Button.Triggers>
                             </Button>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
-    </Grid>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
