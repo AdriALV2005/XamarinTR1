@@ -1,4 +1,6 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using Proyecto.Services;
+using Proyecto.ViewModels;
+using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms;
 
 namespace Proyecto.Views
@@ -8,7 +10,12 @@ namespace Proyecto.Views
         public CustomPopup(string firebaseId)
         {
             InitializeComponent();
-            BindingContext = new CustomPopupViewModel(firebaseId);
+
+            // Obtener la instancia del servicio de usuario
+            var userService = DependencyService.Get<IUserService>();
+
+            // Pasar la instancia del servicio al ViewModel
+            BindingContext = new CustomPopupViewModel(firebaseId, userService);
         }
     }
 }
