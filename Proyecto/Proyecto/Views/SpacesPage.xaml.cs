@@ -18,5 +18,11 @@ namespace Proyecto.Views
             InitializeComponent();
             BindingContext = new ParkingSpacesViewModel();
         }
+
+        private async void ButtonMapa(object sender, EventArgs e)
+        {
+            await DisplayAlert("Información", "No está disponible", "OK");
+
+        }
     }
 }

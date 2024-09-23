@@ -19,7 +19,6 @@
 
             <!-- Mostrar el nombre completo del usuario logueado -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
-                <Label Text="Usuario logueado:" FontSize="Medium" TextColor="#007ACC"/>
                 <Label Text="{Binding FullName}" FontSize="Medium" TextColor="#333333"/>
             </StackLayout>
 

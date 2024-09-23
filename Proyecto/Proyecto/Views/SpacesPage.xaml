@@ -1,8 +1,7 @@
-﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Proyecto.Controls"
-             xmlns:controls="clr-namespace:Proyecto.Controls"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:viewModels="clr-namespace:Proyecto.ViewModels"
              x:Class="Proyecto.Views.SpacesPage"
              NavigationPage.HasNavigationBar="False"
@@ -11,7 +10,7 @@
     <!-- Definir recursos y conversores -->
     <ContentPage.Resources>
         <ResourceDictionary>
-            <!-- Conversor de ocupación a color -->
+            <!-- Conversor de ocupación a color o imagen -->
             <local:OccupiedColorConverter x:Key="OccupiedToColorConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -30,21 +29,71 @@
                    Margin="0,30"
                    FontAttributes="Bold"
                    TextColor="Black" />
+
+            <!-- CollectionView con los espacios de aparcamiento -->
             <CollectionView ItemsSource="{Binding ParkingSpaces}"
                             Margin="20,0"
                             ItemsLayout="VerticalGrid, 2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Button Text="{Binding SpaceName}"
-                                BackgroundColor="{Binding Estado, Converter={StaticResource OccupiedToColorConverter}}"
-                                TextColor="White"
-                                FontSize="12"
-                                FontAttributes="Bold"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ParkingSpacesViewModel}}, Path=CheckAndNavigateCommand}"
-                                CommandParameter="{Binding .}"
-                                Margin="10,10"
-                                CornerRadius="12"
-                                HeightRequest="70" />
+                        <!-- Contenedor para mostrar imagen o botón -->
+                        <Grid>
+                            <!-- Imagen del carro si el espacio está ocupado o reservado -->
+                            <Image Source="carro.webp"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                                <Image.Triggers>
+                                    <DataTrigger TargetType="Image"
+                                                 Binding="{Binding Estado}"
+                                                 Value="ocupado">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image"
+                                                 Binding="{Binding Estado}"
+                                                 Value="reservado">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Image"
+                                                 Binding="{Binding Estado}"
+                                                 Value="disponible">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+
+                            <!-- Botón si el espacio está disponible -->
+                            <Button Text="{Binding SpaceName}"
+                                    BackgroundColor="{Binding Estado, Converter={StaticResource OccupiedToColorConverter}}"
+                                    TextColor="White"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ParkingSpacesViewModel}}, Path=CheckAndNavigateCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Margin="10,10"
+                                    CornerRadius="12"
+                                    HeightRequest="70"
+                                    IsVisible="True">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                                 Binding="{Binding Estado}"
+                                                 Value="ocupado">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Button"
+                                                 Binding="{Binding Estado}"
+                                                 Value="reservado">
+                                        <Setter Property="IsVisible" Value="False" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Button"
+                                                 Binding="{Binding Estado}"
+                                                 Value="disponible">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

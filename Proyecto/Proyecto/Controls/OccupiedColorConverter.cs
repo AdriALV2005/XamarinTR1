@@ -9,10 +9,13 @@ namespace Proyecto.Controls
         {
             string estado = (string)value;
 
-            // Devuelve el color basado en el estado del espacio
-            return estado == "ocupado" ? Color.OrangeRed :
-                   estado == "reservado" ? Color.Orange :
-                   Color.SkyBlue; // Disponible
+            // Si está ocupado o reservado, mostrar la imagen del carro
+            if (estado == "ocupado" || estado == "reservado")
+            {
+                return "carro.webp"; // Devuelve la imagen del carro
+            }
+
+            return Color.LightGreen; // Disponible
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
