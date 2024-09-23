@@ -1,18 +1,75 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-                 x:Class="Proyecto.Views.CustomPopup">
+                 x:Class="Proyecto.Views.CustomPopup"
+                 BackgroundColor="Transparent">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="20" BackgroundColor="White">
-        <Label Text="¡Este es un pop-up!" 
-               FontSize="Large" 
-               HorizontalOptions="Center" 
-               TextColor="Black"/>
-        <Button Text="Cerrar"
-                Command="{Binding CerrarPopupCommand}"
-                FontSize="Medium"
-                HorizontalOptions="Center"/>
-    </StackLayout>
+    <!-- Fondo transparente con un borde redondeado para el pop-up -->
+    <Frame CornerRadius="20" Padding="20" BackgroundColor="White" HasShadow="True" VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="15">
+            <!-- Título principal del pop-up -->
+            <Label Text="Detalles de la Reservación" 
+                   FontSize="Large" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   TextColor="#333333"/>
+
+            <!-- Línea separadora -->
+            <BoxView HeightRequest="2" WidthRequest="100" BackgroundColor="#007ACC" HorizontalOptions="Center"/>
+
+            <!-- Mostrar el FirebaseId -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Label Text="ID de Firebase:" FontSize="Medium" TextColor="#007ACC"/>
+                <Label Text="{Binding FirebaseId}" FontSize="Medium" TextColor="#333333"/>
+            </StackLayout>
+
+            <!-- Mostrar más datos con iconos y formato limpio -->
+            <StackLayout Spacing="10">
+                <!-- Hora Actual -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="⏰ Hora Actual:" FontSize="Medium" TextColor="#007ACC"/>
+                    <Label Text="{Binding HoraActual}" FontSize="Medium" TextColor="#333333"/>
+                </StackLayout>
+
+                <!-- Hora de Llegada -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="📍 Hora de Llegada:" FontSize="Medium" TextColor="#007ACC"/>
+                    <Label Text="{Binding HoraLlegada}" FontSize="Medium" TextColor="#333333"/>
+                </StackLayout>
+
+                <!-- Tiempo de Reservación -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="⏳ Tiempo de Reservación:" FontSize="Medium" TextColor="#007ACC"/>
+                    <Label Text="{Binding TiempoReservacion}" FontSize="Medium" TextColor="#333333"/>
+                </StackLayout>
+
+                <!-- Total a Pagar -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="💲 Total a Pagar:" FontSize="Medium" TextColor="#007ACC"/>
+                    <Label Text="{Binding TotalPagar}" FontSize="Medium" TextColor="#333333"/>
+                </StackLayout>
+
+                <!-- Ubicación del Estacionamiento -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="🚗 Ubicación:" FontSize="Medium" TextColor="#007ACC"/>
+                    <Label Text="{Binding UbicacionEstacionamiento}" FontSize="Medium" TextColor="#333333"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Espaciador para dar más aire entre el contenido y el botón -->
+            <BoxView HeightRequest="10"/>
+
+            <!-- Botón para cerrar el pop-up -->
+            <Button Text="Cerrar"
+                    Command="{Binding CerrarPopupCommand}"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BackgroundColor="#007ACC"
+                    CornerRadius="20"
+                    Padding="10, 5"
+                    HorizontalOptions="Center"
+                    WidthRequest="100"/>
+        </StackLayout>
+    </Frame>
 
 </pages:PopupPage>
